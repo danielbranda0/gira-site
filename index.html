@@ -1,0 +1,1057 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>GIRA · Gostoso por inteiro</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Display&family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Jost:wght@400;500;600&display=swap">
+<style>
+/* Layout: off-white "papel de embalagem" com grão; o azul-petróleo entra em faixas inteiras (como o display de gôndola); arcos do display emolduram produto; o círculo que gira é a assinatura */
+:root{
+  --petrol:#185B64;
+  --paper:#F2EFE8;
+  --cacau:#725044;
+  --lima:#AED35B;
+  --bg:#F2EFE8;
+  --surface:#FAF8F3;
+  --card:#E8E3D7;
+  --fg:#15292B;
+  --muted:#56696A;
+  --line:rgba(24,91,100,.18);
+  --brand:#185B64;
+  --brand-ink:#F2EFE8;
+  --brand-soft:rgba(24,91,100,.08);
+  --band:#185B64;
+  --band-2:#124A51;
+  --band-fg:#F2EFE8;
+  --band-muted:rgba(242,239,232,.72);
+  --flavor:#725044;
+  --overlay:rgba(12,30,32,.45);
+  --shadow:0 30px 60px -30px rgba(18,60,64,.45);
+  --display:"Libre Caslon Display","Libre Caslon Text",Georgia,"Times New Roman",serif;
+  --serif:"Libre Caslon Text",Georgia,"Times New Roman",serif;
+  --sans:"Jost","Avenir Next","Segoe UI",system-ui,sans-serif;
+  --gutter:max(16px,env(safe-area-inset-left,0px));
+  --gutter-r:max(16px,env(safe-area-inset-right,0px));
+  --max:1240px;
+  --header-h:68px;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0F1F21;--surface:#14292C;--card:#1A3336;--fg:#ECE8DF;--muted:#9DB1AF;
+    --line:rgba(236,232,223,.14);--brand:#7CC3BC;--brand-ink:#0F1F21;--brand-soft:rgba(124,195,188,.1);
+    --band:#185B64;--band-2:#124A51;--band-fg:#F2EFE8;--band-muted:rgba(242,239,232,.72);
+    --flavor:#D3A691;--overlay:rgba(0,0,0,.6);--shadow:0 30px 60px -30px rgba(0,0,0,.7);color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0F1F21;--surface:#14292C;--card:#1A3336;--fg:#ECE8DF;--muted:#9DB1AF;
+  --line:rgba(236,232,223,.14);--brand:#7CC3BC;--brand-ink:#0F1F21;--brand-soft:rgba(124,195,188,.1);
+  --band:#185B64;--band-2:#124A51;--band-fg:#F2EFE8;--band-muted:rgba(242,239,232,.72);
+  --flavor:#D3A691;--overlay:rgba(0,0,0,.6);--shadow:0 30px 60px -30px rgba(0,0,0,.7);color-scheme:dark;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--header-h) + 12px)}
+body{background:var(--bg);color:var(--fg);font-family:var(--sans);font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--bg)}
+body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:100;opacity:.06;mix-blend-mode:multiply;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+img{max-width:100%;display:block}
+a{color:inherit}
+button{font:inherit;color:inherit;cursor:pointer}
+:focus-visible{outline:2.5px solid var(--brand);outline-offset:3px;border-radius:6px}
+.wrap{max-width:var(--max);margin:0 auto;padding-left:var(--gutter);padding-right:var(--gutter-r)}
+.eyebrow{font-family:var(--sans);font-size:.78rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--brand)}
+h1,h2,h3{font-weight:400;margin:0;text-wrap:balance}
+h2{font-family:var(--display);font-size:clamp(2.2rem,4.6vw,3.9rem);line-height:1.02;letter-spacing:-.01em}
+h3{font-family:var(--serif);font-size:1.45rem;line-height:1.2}
+p{margin:0}
+.lede{font-size:1.12rem;color:var(--muted);max-width:56ch}
+.logo{display:block;fill:currentColor}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.6em;min-height:50px;padding:0 1.5em;border-radius:999px;border:1.5px solid transparent;font-weight:500;font-size:1rem;text-decoration:none;transition:transform .2s ease,background .2s ease,color .2s ease,border-color .2s}
+.btn:active{transform:scale(.97)}
+.btn-primary{background:var(--brand);color:var(--brand-ink)}
+.btn-primary:hover{background:var(--fg);color:var(--bg)}
+.btn-ghost{border-color:currentColor;background:transparent}
+.btn-ghost:hover{background:var(--brand-soft)}
+.btn-light{background:var(--band-fg);color:#185B64}
+.btn-light:hover{background:var(--lima)}
+.btn .arr{transition:transform .25s}
+.btn:hover .arr{transform:translateX(4px)}
+
+/* Header */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;gap:24px;height:var(--header-h)}
+.top .brand{color:var(--brand);width:92px;flex:none}
+.nav{display:flex;gap:28px;margin-left:auto}
+.nav a{text-decoration:none;font-size:.98rem;position:relative;padding:6px 0}
+.nav a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1.5px;background:var(--brand);transform:scaleX(0);transform-origin:left;transition:transform .3s}
+.nav a:hover::after{transform:scaleX(1)}
+.top-actions{display:flex;align-items:center;gap:10px}
+.btn-sub{min-height:40px;padding:0 1.1em;font-size:.93rem}
+.cart-btn{position:relative;width:44px;height:44px;border-radius:50%;border:1.5px solid var(--line);background:transparent;display:grid;place-items:center}
+.cart-btn:hover{border-color:var(--brand)}
+.cart-btn svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.6}
+.cart-count{position:absolute;top:-4px;right:-4px;min-width:20px;height:20px;padding:0 5px;border-radius:10px;background:var(--brand);color:var(--brand-ink);font-size:.72rem;font-weight:600;display:grid;place-items:center;font-variant-numeric:tabular-nums;transition:transform .3s cubic-bezier(.3,1.6,.5,1)}
+.cart-count.bump{transform:scale(1.35)}
+.menu-btn{display:none;width:44px;height:44px;border:0;background:transparent;padding:0}
+.menu-btn span{display:block;width:22px;height:1.6px;background:currentColor;margin:5px auto;transition:transform .3s}
+@media (max-width:900px){
+  .nav,.top .btn-sub{display:none}
+  .menu-btn{display:block}
+  .top-actions{margin-left:auto}
+}
+.mnav{position:fixed;inset:0;z-index:70;background:var(--band);color:var(--band-fg);padding:calc(env(safe-area-inset-top,0px) + 24px) var(--gutter-r) 32px var(--gutter);display:flex;flex-direction:column;gap:8px}
+.mnav-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:28px}
+.mnav-head .logo{width:96px;color:var(--band-fg)}
+.mnav a{font-family:var(--display);font-size:2.4rem;text-decoration:none;padding:6px 0;border-bottom:1px solid rgba(242,239,232,.15)}
+.mnav .btn{margin-top:24px;align-self:flex-start}
+.x-btn{width:44px;height:44px;border-radius:50%;border:1.5px solid currentColor;background:transparent;font-size:1.3rem;line-height:1}
+
+/* Hero */
+.hero{position:relative;padding-block:clamp(36px,6vw,80px) clamp(48px,7vw,96px);overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.05fr 1fr;gap:clamp(24px,4vw,64px);align-items:center}
+.hero-copy{display:flex;flex-direction:column;gap:26px;min-width:0}
+.hero h1{font-family:var(--display);font-size:clamp(3.3rem,8.2vw,7.4rem);line-height:.9;letter-spacing:-.02em;color:var(--brand)}
+.hero h1 em{font-family:var(--serif);font-style:italic;color:var(--flavor);font-size:.86em;display:block;margin-top:.08em}
+.hero .lede{font-size:1.18rem}
+.hero-ctas{display:flex;flex-wrap:wrap;gap:12px}
+.specs{display:flex;flex-wrap:wrap;gap:0;border-top:1px solid var(--line);padding-top:18px;margin-top:6px}
+.spec{padding-right:22px;margin-right:22px;border-right:1px solid var(--line);display:flex;flex-direction:column}
+.spec:last-child{border:0}
+.spec b{font-family:var(--serif);font-weight:400;font-size:1.65rem;color:var(--brand);line-height:1;font-variant-numeric:tabular-nums}
+.spec span{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-top:6px}
+.hero-art{position:relative;aspect-ratio:1/1;max-width:100%;display:grid;place-items:center;min-width:0}
+.arch{position:absolute;inset:6% 12% 0;border-radius:999px 999px 28px 28px;background:var(--band);overflow:hidden}
+.arch::after{content:"";position:absolute;left:0;right:0;bottom:0;height:5px;background:linear-gradient(90deg,var(--lima),#E9B44C 60%,#E07B39)}
+.ring{position:absolute;inset:0;width:100%;height:100%;animation:spin 38s linear infinite}
+.ring text{font-family:var(--sans);font-size:15.5px;letter-spacing:.42em;font-weight:500;fill:var(--brand);text-transform:uppercase}
+@keyframes spin{to{transform:rotate(360deg)}}
+.hero-bar{position:relative;width:80%;margin-top:30%;transform:rotate(-9deg);filter:drop-shadow(0 34px 34px rgba(8,40,44,.35));animation:float 6s ease-in-out infinite}
+@keyframes float{50%{transform:rotate(-7deg) translateY(-12px)}}
+.hero-art{align-items:start}
+.arch-logo{position:absolute;top:13%;left:50%;transform:translateX(-50%);width:44%;color:var(--band-fg);opacity:.95}
+.arch-tag{position:absolute;top:31%;left:0;right:0;text-align:center;color:var(--band-fg);font-family:var(--serif);font-style:italic;font-size:clamp(1rem,1.6vw,1.25rem)}
+.stamp{position:absolute;right:2%;bottom:6%;width:92px;height:92px;border-radius:50%;background:var(--lima);color:#15292B;display:grid;place-items:center;text-align:center;font-size:.68rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;line-height:1.25;transform:rotate(12deg);box-shadow:var(--shadow)}
+.stamp b{display:block;font-family:var(--serif);font-weight:400;font-size:1.5rem;letter-spacing:0;text-transform:none}
+@media (max-width:900px){
+  .hero .wrap{grid-template-columns:1fr}
+  .hero-art{max-width:520px;width:100%;margin:0 auto;order:-1}
+}
+
+/* Marquee */
+.marquee{background:var(--band);color:var(--band-fg);overflow:hidden;border-block:1px solid var(--band-2)}
+.marquee-track{display:flex;width:max-content;animation:slide 40s linear infinite;padding-block:18px}
+.marquee span{font-family:var(--serif);font-style:italic;font-size:clamp(1.3rem,2.4vw,1.9rem);white-space:nowrap;padding:0 .6em;display:flex;align-items:center;gap:1.2em}
+.marquee span::after{content:"";width:12px;height:12px;border-radius:50%;border:1.5px solid var(--lima)}
+@keyframes slide{to{transform:translateX(-50%)}}
+
+/* Bite (scroll moment) */
+.bite{position:relative}
+.bite-track{height:230vh}
+.bite-sticky{position:sticky;top:calc(var(--header-h) + env(safe-area-inset-top,0px));min-height:calc(100vh - var(--header-h));display:flex;align-items:center;padding-block:32px}
+.bite .wrap{display:grid;grid-template-columns:1.25fr 1fr;gap:clamp(24px,5vw,72px);align-items:center;width:100%}
+.stage{position:relative;aspect-ratio:1087/555;width:100%;max-width:100%}
+.stage canvas{position:absolute;left:9%;top:12%;width:82%;height:76%;transform:scale(var(--bs,.9));transition:transform .1s linear}
+.half{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;will-change:transform}
+.stage::before{content:"";position:absolute;left:12%;right:12%;bottom:2%;height:12%;border-radius:50%;background:radial-gradient(closest-side,rgba(8,40,44,.28),transparent)}
+.half.l{clip-path:polygon(0 0,50% 0,48.6% 9%,51.2% 18%,48.8% 27%,51.4% 37%,48.5% 47%,51.1% 57%,48.7% 66%,51.3% 76%,48.9% 86%,50.6% 94%,49.5% 100%,0 100%)}
+.half.r{clip-path:polygon(50% 0,100% 0,100% 100%,49.5% 100%,50.6% 94%,48.9% 86%,51.3% 76%,48.7% 66%,51.1% 57%,48.5% 47%,51.4% 37%,48.8% 27%,51.2% 18%,48.6% 9%)}
+.bite-copy{display:flex;flex-direction:column;gap:22px;min-width:0;position:relative;z-index:2}
+.senses{list-style:none;margin:8px 0 0;padding:0;display:flex;flex-direction:column}
+.senses li{display:grid;grid-template-columns:auto 1fr;gap:4px 16px;padding:16px 0;border-top:1px solid var(--line);opacity:var(--o,.45);transition:opacity .35s}
+.senses li:last-child{border-bottom:1px solid var(--line)}
+.senses b{font-family:var(--serif);font-weight:400;font-size:1.3rem;grid-column:2}
+.senses small{grid-column:2;color:var(--muted);font-size:.95rem}
+.senses i{grid-row:1/3;width:10px;height:10px;border-radius:50%;background:var(--flavor);margin-top:.6em;font-style:normal}
+.hint{font-size:.8rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);display:flex;align-items:center;gap:10px}
+.hint::before{content:"";width:28px;height:1px;background:currentColor}
+@media (max-width:900px){
+  .bite-track{height:200vh}
+  .bite .wrap{grid-template-columns:1fr;gap:18px}
+  .bite h2{font-size:clamp(1.9rem,8vw,2.6rem)}
+  .senses li{padding:10px 0}
+  .senses small{display:none}
+}
+@media (prefers-reduced-motion:reduce){
+  .bite-track{height:auto}
+  .bite-sticky{position:static;min-height:0;padding-block:72px}
+  .ring,.hero-bar,.marquee-track,.cycle-spin{animation:none!important}
+}
+
+/* Composition */
+.section{padding-block:clamp(72px,10vw,140px)}
+.comp-head{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,5vw,72px);align-items:end;margin-bottom:56px}
+.comp-head > *{min-width:0}
+.numbers{display:grid;grid-template-columns:repeat(3,1fr);border-top:1.5px solid var(--fg)}
+.num{padding:28px 24px 30px 0;display:flex;flex-direction:column;gap:12px;min-width:0}
+.num + .num{padding-left:24px;border-left:1px solid var(--line)}
+.num .big{font-family:var(--display);font-size:clamp(4.2rem,9vw,7.6rem);line-height:.85;color:var(--brand);font-variant-numeric:tabular-nums}
+.num .big sup{font-family:var(--sans);font-size:.26em;letter-spacing:.06em;vertical-align:top;margin-left:.15em;position:relative;top:.4em}
+.num .lbl{font-size:.78rem;letter-spacing:.2em;text-transform:uppercase;font-weight:600}
+.num p{color:var(--muted);font-size:.98rem;max-width:34ch}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px}
+.chip{border:1px solid var(--line);border-radius:999px;padding:6px 14px;font-size:.88rem;background:var(--surface)}
+.vs{margin-top:72px;display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(24px,5vw,64px);align-items:start}
+.vs > *{min-width:0}
+.vs-table-wrap{overflow-x:auto;border-radius:22px;background:var(--surface);border:1px solid var(--line)}
+.vs table{width:100%;border-collapse:collapse;min-width:520px}
+.vs th,.vs td{text-align:left;padding:16px 20px;vertical-align:top;font-size:.97rem}
+.vs thead th{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;font-weight:600;color:var(--muted);border-bottom:1px solid var(--line)}
+.vs thead th.us{color:var(--brand)}
+.vs tbody th{font-weight:500;width:26%}
+.vs tbody tr + tr > *{border-top:1px solid var(--line)}
+.vs td.us{color:var(--fg);background:var(--brand-soft);font-weight:500}
+.vs td.them{color:var(--muted)}
+.vs td.us::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--brand);margin-right:10px;vertical-align:.1em}
+.footnote{font-size:.82rem;color:var(--muted);margin-top:18px}
+@media (max-width:900px){
+  .comp-head,.vs{grid-template-columns:1fr}
+  .numbers{grid-template-columns:1fr}
+  .num + .num{padding-left:0;border-left:0;border-top:1px solid var(--line)}
+}
+
+/* Occasions */
+.occ{background:var(--card);padding-block:clamp(72px,9vw,120px);overflow:hidden}
+.occ-head{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;margin-bottom:40px}
+.occ-head > div{min-width:0;max-width:640px;display:flex;flex-direction:column;gap:16px}
+.occ-head > .arrows{display:flex;flex-direction:row;gap:8px}
+.arrows button{width:50px;height:50px;border-radius:50%;border:1.5px solid var(--fg);background:transparent;font-size:1.2rem}
+.arrows button:hover{background:var(--fg);color:var(--bg)}
+.rail{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;padding-left:max(var(--gutter),calc((100vw - var(--max))/2 + 16px));padding-right:var(--gutter-r);padding-bottom:14px;scrollbar-width:none;cursor:grab}
+.rail::-webkit-scrollbar{display:none}
+.rail.drag{cursor:grabbing;scroll-snap-type:none}
+.occ-card{flex:0 0 min(78vw,360px);scroll-snap-align:start;border-radius:26px;padding:28px;min-height:440px;display:flex;flex-direction:column;justify-content:space-between;gap:20px;position:relative;overflow:hidden;user-select:none}
+.occ-card:nth-child(1){background:var(--surface)}
+.occ-card:nth-child(2){background:var(--band);color:var(--band-fg)}
+.occ-card:nth-child(3){background:#2F4A3A;color:#EEF1E6}
+.occ-card:nth-child(4){background:#725044;color:#F6EDE6}
+.occ-card:nth-child(5){background:var(--surface)}
+.occ-card .when{font-family:var(--display);font-size:4.4rem;line-height:.9}
+.occ-card .tag{font-size:.74rem;letter-spacing:.2em;text-transform:uppercase;font-weight:600;opacity:.8}
+.occ-card h3{font-size:1.6rem}
+.occ-card p{opacity:.82;font-size:.98rem}
+.occ-card img{width:78%;margin:-6px 0 -10px auto;transform:rotate(-6deg);filter:drop-shadow(0 16px 18px rgba(0,0,0,.25));pointer-events:none}
+.occ-card:nth-child(even) img{transform:rotate(5deg)}
+
+/* Shop */
+.shop-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:clamp(28px,5vw,72px);align-items:start}
+.shop-grid > *{min-width:0}
+.gallery{position:sticky;top:calc(var(--header-h) + 24px);display:flex;flex-direction:column;gap:12px}
+.g-main{aspect-ratio:5/4;border-radius:28px;background:var(--card);display:grid;place-items:center;overflow:hidden;position:relative;max-width:100%}
+.g-main img{width:100%;height:100%;object-fit:contain;padding:8%;transition:opacity .35s,transform .5s}
+.g-main img.cover{object-fit:cover;padding:0}
+.g-main img.swap{opacity:0;transform:scale(.97)}
+.thumbs{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+.thumbs button{aspect-ratio:1;border-radius:14px;border:1.5px solid transparent;background:var(--card);padding:6px;overflow:hidden}
+.thumbs button[aria-pressed="true"]{border-color:var(--brand)}
+.thumbs img{width:100%;height:100%;object-fit:contain}
+.thumbs img.cover{object-fit:cover;border-radius:9px}
+.pdp{display:flex;flex-direction:column;gap:22px}
+.pdp h2{font-size:clamp(2.4rem,4.4vw,3.6rem);color:var(--flavor)}
+.pdp .sub{font-size:.78rem;letter-spacing:.2em;text-transform:uppercase;font-weight:600;color:var(--brand)}
+.opts{display:flex;flex-direction:column;gap:12px;border:0;margin:0;padding:0}
+.opts legend{font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;font-weight:600;margin-bottom:10px;padding:0}
+.opt{position:relative;display:grid;grid-template-columns:auto 1fr auto;gap:4px 16px;align-items:center;padding:18px 20px;border-radius:20px;border:1.5px solid var(--line);background:var(--surface);cursor:pointer;transition:border-color .2s,background .2s}
+.opt:hover{border-color:var(--brand)}
+.opt input{position:absolute;opacity:0;pointer-events:none}
+.opt .dot{grid-row:1/3;width:22px;height:22px;border-radius:50%;border:1.5px solid var(--muted);display:grid;place-items:center}
+.opt .dot::after{content:"";width:10px;height:10px;border-radius:50%;background:var(--brand);transform:scale(0);transition:transform .25s cubic-bezier(.3,1.6,.5,1)}
+.opt:has(input:checked){border-color:var(--brand);background:var(--brand-soft)}
+.opt:has(input:checked) .dot{border-color:var(--brand)}
+.opt:has(input:checked) .dot::after{transform:scale(1)}
+.opt:has(input:focus-visible){outline:2.5px solid var(--brand);outline-offset:3px}
+.opt-name{font-family:var(--serif);font-size:1.18rem;grid-column:2;grid-row:1}
+.opt-desc{font-size:.9rem;color:var(--muted);grid-column:2;grid-row:2}
+@media (max-width:560px){.pdp .opt{grid-template-columns:auto 1fr}.pdp .opt-price{grid-column:2;grid-row:3;text-align:left;display:flex;gap:8px;align-items:baseline}.pdp .opt-price small{display:inline}}
+.opt-price{grid-column:3;grid-row:1/3;text-align:right;font-variant-numeric:tabular-nums;font-weight:500}
+.opt-price small{display:block;font-weight:400;font-size:.8rem;color:var(--muted)}
+.badge{display:inline-block;margin-left:8px;padding:2px 9px;border-radius:999px;background:var(--lima);color:#15292B;font-family:var(--sans);font-size:.68rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;vertical-align:.2em}
+.subcfg{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:18px;border-radius:20px;background:var(--card)}
+.subcfg label{display:flex;flex-direction:column;gap:6px;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;font-weight:600;min-width:0}
+.seg{display:flex;border-radius:999px;border:1.5px solid var(--line);overflow:hidden;background:var(--surface)}
+.seg button{flex:1;border:0;background:transparent;padding:10px 4px;font-size:.92rem;letter-spacing:0;text-transform:none;font-weight:500}
+.seg button[aria-pressed="true"]{background:var(--brand);color:var(--brand-ink)}
+.buy-row{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.qty{display:flex;align-items:center;border:1.5px solid var(--line);border-radius:999px;height:50px}
+.qty button{width:46px;height:100%;border:0;background:transparent;font-size:1.2rem}
+.qty output{min-width:28px;text-align:center;font-variant-numeric:tabular-nums;font-weight:500}
+.buy-row .btn-primary{flex:1;min-width:220px}
+.perks{display:flex;flex-wrap:wrap;gap:8px 22px;font-size:.9rem;color:var(--muted);list-style:none;padding:0;margin:0}
+.perks li{display:flex;align-items:center;gap:8px}
+.perks li::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--brand)}
+.next{margin-top:clamp(64px,8vw,104px);display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(24px,5vw,64px);align-items:center;border-radius:32px;background:var(--surface);border:1px solid var(--line);padding:clamp(20px,4vw,48px);overflow:hidden}
+.next > *{min-width:0}
+.next img{border-radius:22px;width:100%;max-height:520px;object-fit:cover;object-position:top}
+.flv{display:flex;flex-direction:column;margin:20px 0 24px}
+.flv li{list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid var(--line);font-family:var(--serif);font-size:1.2rem}
+.flv li span{font-family:var(--sans);font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.notify[aria-pressed="true"]{background:var(--brand);color:var(--brand-ink);border-color:var(--brand)}
+@media (max-width:900px){
+  .shop-grid,.next{grid-template-columns:1fr}
+  .gallery{position:static}
+  .subcfg{grid-template-columns:1fr}
+}
+
+/* Word of mouth */
+.wom{padding-block:clamp(72px,9vw,128px);border-top:1px solid var(--line)}
+.wom blockquote{margin:0 auto;max-width:980px;text-align:center;font-family:var(--display);font-size:clamp(1.9rem,4.2vw,3.5rem);line-height:1.12;color:var(--fg);text-wrap:balance}
+.wom blockquote em{color:var(--brand)}
+.wom .eyebrow{display:block;text-align:center;margin-bottom:26px}
+.slots{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:56px}
+.slot{border:1.5px dashed var(--line);border-radius:22px;padding:24px;display:flex;flex-direction:column;gap:14px;min-height:190px;min-width:0}
+.slot .stars{letter-spacing:.2em;color:var(--brand);font-size:1rem}
+.slot p{color:var(--muted);font-family:var(--serif);font-style:italic}
+.slot small{margin-top:auto;font-size:.76rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.slot.cta{border-style:solid;background:var(--brand);color:var(--brand-ink);border-color:var(--brand)}
+.slot.cta p{color:inherit;font-style:normal;font-family:var(--serif);font-size:1.35rem;line-height:1.25}
+.slot.cta small{color:inherit;opacity:.8}
+@media (max-width:900px){.slots{grid-template-columns:1fr}}
+
+/* About band */
+.about{background:var(--band);color:var(--band-fg);padding-block:clamp(80px,10vw,150px);position:relative;overflow:hidden}
+.about .eyebrow{color:var(--lima)}
+.about h2{color:var(--band-fg)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,6vw,96px);align-items:center}
+.about-grid > *{min-width:0}
+.about .lede{color:var(--band-muted)}
+.manifesto{font-family:var(--serif);font-size:clamp(1.15rem,1.6vw,1.3rem);line-height:1.6;color:var(--band-fg);display:flex;flex-direction:column;gap:1em;max-width:58ch;margin-top:28px}
+.manifesto strong{font-weight:400;font-style:italic;color:var(--lima)}
+.cycle{position:relative;aspect-ratio:1;max-width:520px;width:100%;margin:0 auto}
+.cycle svg{width:100%;height:100%;overflow:visible}
+.cycle-spin{transform-origin:260px 260px;animation:spin 60s linear infinite}
+.node-lbl{position:absolute;width:42%;font-size:.9rem;line-height:1.35;color:var(--band-fg)}
+.node-lbl b{display:block;font-family:var(--serif);font-weight:400;font-size:1.1rem;color:var(--lima);margin-bottom:2px}
+.n1{top:-2%;left:50%;transform:translateX(-50%);text-align:center}
+.n2{right:-6%;top:44%;text-align:left;width:30%}
+.n3{bottom:-4%;left:50%;transform:translateX(-50%);text-align:center}
+.n4{left:-6%;top:44%;text-align:right;width:30%}
+.cycle-center{position:absolute;inset:0;display:grid;place-items:center;pointer-events:none}
+.cycle-center .logo{width:34%;color:var(--band-fg)}
+.cycle-list{display:none;margin:0;padding:0;list-style:none;counter-reset:c}
+.cycle-list li{counter-increment:c;display:grid;grid-template-columns:34px 1fr;gap:2px 10px;padding:12px 0;border-top:1px solid rgba(242,239,232,.2);font-size:.95rem;color:var(--band-muted)}
+.cycle-list li::before{content:counter(c);grid-row:1/3;width:26px;height:26px;border-radius:50%;border:1.5px solid var(--lima);color:var(--lima);display:grid;place-items:center;font-size:.8rem;font-weight:600}
+.cycle-list b{font-family:var(--serif);font-weight:400;color:var(--band-fg);font-size:1.1rem}
+@media (max-width:640px){.node-lbl{display:none}.cycle{max-width:300px}.cycle-list{display:block}}
+.pillars{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:clamp(64px,8vw,100px);border-top:1px solid rgba(242,239,232,.2)}
+.pillar{padding:28px 24px 0 0;display:flex;flex-direction:column;gap:10px;min-width:0}
+.pillar + .pillar{padding-left:24px;border-left:1px solid rgba(242,239,232,.2)}
+.pillar h3{font-size:1.3rem}
+.pillar p{color:var(--band-muted);font-size:.96rem}
+.pillar .k{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--lima);font-weight:600}
+@media (max-width:900px){
+  .about-grid{grid-template-columns:1fr}
+  .cycle{max-width:400px;margin-top:24px;margin-bottom:24px}
+  .n2{right:-2%}.n4{left:-2%}
+  .node-lbl{font-size:.78rem}
+  .node-lbl b{font-size:.95rem}
+  .pillars{grid-template-columns:1fr 1fr}
+  .pillar:nth-child(3){padding-left:0;border-left:0}
+  .pillar{padding-bottom:24px}
+}
+@media (max-width:520px){
+  .pillars{grid-template-columns:1fr}
+  .pillar + .pillar{padding-left:0;border-left:0;border-top:1px solid rgba(242,239,232,.2)}
+}
+
+/* Pros */
+.pros-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:48px}
+.pro{border-radius:26px;background:var(--surface);border:1px solid var(--line);overflow:hidden;display:flex;flex-direction:column;min-width:0}
+.pro-img{aspect-ratio:16/10;background:var(--card);overflow:hidden;max-width:100%}
+.pro-img img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.pro:hover .pro-img img{transform:scale(1.04)}
+.pro-img.contain img{object-fit:contain;padding:6%}
+.pro-body{padding:24px;display:flex;flex-direction:column;gap:12px;flex:1}
+.pro-body .k{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;font-weight:600;color:var(--brand)}
+.pro-body p{color:var(--muted);font-size:.97rem}
+.pro-body .btn{margin-top:auto;align-self:flex-start;min-height:44px}
+@media (max-width:900px){.pros-grid{grid-template-columns:1fr}}
+
+/* Blog */
+.blog{background:var(--card)}
+.blog-head{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;margin-bottom:40px}
+.posts{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:18px}
+.post{border-radius:24px;padding:26px;display:flex;flex-direction:column;gap:14px;min-height:300px;background:var(--surface);text-decoration:none;transition:transform .3s;min-width:0}
+.post:hover{transform:translateY(-4px)}
+.post:first-child{background:var(--band);color:var(--band-fg)}
+.post:first-child .meta{color:var(--band-muted)}
+.post .meta{font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);display:flex;gap:10px;flex-wrap:wrap}
+.post h3{font-family:var(--display);font-size:clamp(1.5rem,2.4vw,2.1rem);line-height:1.08}
+.post p{opacity:.8;font-size:.96rem}
+.post .soon{margin-top:auto;font-size:.82rem;font-weight:500;display:flex;align-items:center;gap:8px}
+@media (max-width:900px){.posts{grid-template-columns:1fr}.post{min-height:0}}
+
+/* Closing form */
+.close{padding-block:clamp(80px,10vw,140px);text-align:center;position:relative;overflow:hidden}
+.close .giant{width:min(1100px,96%);margin:0 auto;color:var(--brand);opacity:.09}
+.close-inner{position:relative;margin-top:calc(-1 * clamp(80px,14vw,190px));display:flex;flex-direction:column;align-items:center;gap:22px}
+.close h2{color:var(--brand)}
+.lead{display:flex;gap:10px;width:min(560px,100%);flex-wrap:wrap}
+.lead input{flex:1;min-width:200px;height:52px;border-radius:999px;border:1.5px solid var(--line);background:var(--surface);color:var(--fg);padding:0 22px;font:inherit}
+.lead input:focus{outline:none;border-color:var(--brand)}
+.lead-msg{min-height:1.5em;color:var(--brand);font-weight:500}
+
+/* Footer */
+footer{background:var(--band);color:var(--band-fg);padding-block:64px 40px}
+.foot{display:grid;grid-template-columns:1.2fr repeat(3,1fr);gap:32px}
+.foot > *{min-width:0}
+.foot .logo{width:140px;color:var(--band-fg)}
+.foot h4{margin:0 0 14px;font-size:.74rem;letter-spacing:.2em;text-transform:uppercase;color:var(--lima);font-weight:600}
+.foot ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
+.foot a{text-decoration:none;color:var(--band-muted)}
+.foot a:hover{color:var(--band-fg)}
+.foot-tag{font-family:var(--serif);font-style:italic;font-size:1.3rem;margin-top:14px}
+.legal{margin-top:48px;padding-top:22px;border-top:1px solid rgba(242,239,232,.18);font-size:.8rem;color:var(--band-muted);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+@media (max-width:900px){.foot{grid-template-columns:1fr 1fr}.foot > :first-child{grid-column:1/-1}}
+
+/* Drawer + modal */
+.scrim{position:fixed;inset:0;background:var(--overlay);z-index:80;opacity:0;transition:opacity .3s}
+.scrim.on{opacity:1}
+.drawer{position:fixed;top:0;right:0;bottom:0;width:min(440px,100vw);background:var(--bg);z-index:90;display:flex;flex-direction:column;transform:translateX(100%);transition:transform .45s cubic-bezier(.2,.8,.2,1);padding:calc(env(safe-area-inset-top,0px) + 22px) max(22px,env(safe-area-inset-right,0px)) calc(env(safe-area-inset-bottom,0px) + 22px) 22px;box-shadow:-30px 0 60px -30px rgba(0,0,0,.4);visibility:hidden}
+.drawer.on{transform:none;visibility:visible}
+.d-head{display:flex;justify-content:space-between;align-items:center;padding-bottom:16px;border-bottom:1px solid var(--line)}
+.d-head h3{font-family:var(--display);font-size:2rem}
+.ship{padding:16px 0;border-bottom:1px solid var(--line);font-size:.92rem}
+.bar{height:6px;border-radius:3px;background:var(--card);margin-top:10px;overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--brand),var(--lima));border-radius:3px;transition:width .5s}
+.items{flex:1;overflow-y:auto;padding:8px 0;display:flex;flex-direction:column}
+.item{display:grid;grid-template-columns:76px 1fr auto;gap:14px;padding:16px 0;border-bottom:1px solid var(--line);align-items:center}
+.item img{width:76px;height:60px;object-fit:contain;background:var(--card);border-radius:12px;padding:4px}
+.item .nm{font-family:var(--serif);font-size:1.05rem;line-height:1.25}
+.item .dt{font-size:.84rem;color:var(--muted)}
+.item .mini{display:flex;align-items:center;gap:4px;margin-top:6px}
+.item .mini button{width:28px;height:28px;border-radius:50%;border:1px solid var(--line);background:transparent;font-size:.95rem;line-height:1}
+.item .mini output{min-width:22px;text-align:center;font-variant-numeric:tabular-nums}
+.item .pr{text-align:right;font-variant-numeric:tabular-nums;font-weight:500}
+.item .rm{display:block;margin-top:6px;border:0;background:none;color:var(--muted);font-size:.8rem;text-decoration:underline;padding:0;margin-left:auto}
+.empty{padding:48px 8px;text-align:center;color:var(--muted);display:flex;flex-direction:column;gap:16px;align-items:center}
+.empty .logo{width:90px;color:var(--brand);opacity:.35}
+.d-foot{padding-top:16px;border-top:1px solid var(--line);display:flex;flex-direction:column;gap:12px}
+.tot{display:flex;justify-content:space-between;font-size:1.05rem;font-variant-numeric:tabular-nums}
+.tot b{font-family:var(--serif);font-weight:400;font-size:1.5rem}
+.modal{position:fixed;inset:0;z-index:95;display:grid;place-items:center;padding:calc(env(safe-area-inset-top,0px) + 16px) var(--gutter-r) calc(env(safe-area-inset-bottom,0px) + 16px) var(--gutter)}
+.sheet{width:min(620px,100%);max-height:100%;overflow-y:auto;background:var(--bg);border-radius:28px;padding:clamp(20px,4vw,36px);box-shadow:var(--shadow);display:flex;flex-direction:column;gap:22px;animation:rise .45s cubic-bezier(.2,.8,.2,1)}
+@keyframes rise{from{transform:translateY(30px);opacity:0}}
+.steps{display:flex;gap:6px;list-style:none;margin:0;padding:0}
+.steps li{flex:1;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:var(--muted);border-top:3px solid var(--card);padding-top:8px}
+.steps li.on{color:var(--brand);border-color:var(--brand)}
+.fgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.field{display:flex;flex-direction:column;gap:6px;font-size:.84rem;font-weight:500;min-width:0}
+.field.full{grid-column:1/-1}
+.field input{height:48px;border-radius:14px;border:1.5px solid var(--line);background:var(--surface);color:var(--fg);padding:0 14px;font:inherit;font-weight:400}
+.field input:focus{outline:none;border-color:var(--brand)}
+.pay{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.pay .opt{grid-template-columns:auto 1fr}
+.note{font-size:.84rem;color:var(--muted);background:var(--card);border-radius:14px;padding:12px 16px}
+.sheet-actions{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.done{text-align:center;display:flex;flex-direction:column;align-items:center;gap:14px;padding-block:12px}
+.done .spinlogo{width:150px;color:var(--brand);animation:pop .8s cubic-bezier(.3,1.5,.5,1)}
+@keyframes pop{from{transform:rotate(-200deg) scale(.3);opacity:0}}
+.done h3{font-family:var(--display);font-size:2.4rem;color:var(--brand)}
+.summary{width:100%;font-size:.95rem;border-top:1px solid var(--line);padding-top:12px;display:flex;flex-direction:column;gap:6px;font-variant-numeric:tabular-nums}
+.summary div{display:flex;justify-content:space-between;gap:12px}
+.toast{position:fixed;left:50%;bottom:calc(env(safe-area-inset-bottom,0px) + 22px);transform:translate(-50%,calc(100% + 40px));visibility:hidden;background:var(--fg);color:var(--bg);padding:12px 20px;border-radius:999px;z-index:99;font-size:.94rem;transition:transform .4s cubic-bezier(.2,.8,.2,1);max-width:calc(100vw - 32px)}
+.toast.on{transform:translate(-50%,0);visibility:visible}
+@media (max-width:520px){.fgrid,.pay{grid-template-columns:1fr}}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+</style>
+</head>
+<body>
+
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="gira" viewBox="0 0 3288 992"><path fill-rule="evenodd" d="M460.0 982.0C458.1 980.9 455.5 980.1 454.2 980.0C453.0 980.0 450.2 979.1 448.0 978.0C444.4 976.2 442.1 976.0 421.7 976.0C399.4 976.0 399.4 976.0 394.0 972.0C388.6 968.0 388.6 968.0 378.3 968.0C369.9 968.0 367.2 967.6 364.0 966.0C361.8 964.9 359.1 964.0 358.0 964.0C356.9 964.0 354.2 963.1 352.0 962.0C349.8 960.9 346.1 960.0 343.7 960.0C340.2 960.0 338.3 959.2 334.0 956.0C329.0 952.3 328.2 952.0 322.0 952.0C315.8 952.0 315.0 951.7 310.0 948.0C305.5 944.7 303.9 944.0 300.0 944.0C296.1 944.0 294.5 943.3 290.0 940.0C286.9 937.7 283.5 936.0 282.0 936.0C280.5 936.0 277.1 934.3 274.0 932.0C270.9 929.7 267.5 928.0 266.0 928.0C264.5 928.0 261.1 926.3 258.0 924.0C254.8 921.6 251.5 920.0 249.9 920.0C247.9 920.0 246.3 918.9 244.0 916.0C241.1 912.3 240.4 912.0 236.1 912.0C230.8 912.0 223.9 907.9 216.5 900.2C213.7 897.4 211.6 896.0 209.8 896.0C207.9 896.0 206.3 894.8 204.0 892.0C201.7 889.2 200.1 888.0 198.2 888.0C196.4 888.0 194.3 886.6 191.5 883.8C189.2 881.4 185.0 877.9 182.0 876.0C179.1 874.1 174.5 870.5 171.9 868.0C169.3 865.5 163.1 860.1 158.1 856.0C144.1 844.5 128.5 828.9 126.0 823.9C124.8 821.5 120.3 816.1 116.0 812.0C111.7 807.9 107.2 802.5 106.0 800.0C104.8 797.5 102.0 793.7 99.8 791.5C90.1 781.8 85.0 774.1 74.1 752.3C65.9 735.7 62.3 729.7 60.0 728.0C55.8 725.0 48.0 709.5 48.0 704.0C48.0 701.0 46.0 696.1 40.0 684.0C34.0 671.9 32.0 667.0 32.0 664.0C32.0 661.3 30.7 657.4 28.0 652.0C25.3 646.6 24.0 642.7 24.0 640.0C24.0 637.7 23.1 634.2 22.0 632.0C20.9 629.8 20.0 626.2 20.0 624.0C20.0 621.8 19.1 618.2 18.0 616.0C16.9 613.8 16.0 610.2 16.0 608.0C16.0 605.8 15.1 602.2 14.0 600.0C12.4 596.8 12.0 594.1 12.0 586.0C12.0 577.9 11.6 575.2 10.0 572.0C6.9 565.9 6.9 466.1 10.0 460.0C11.4 457.4 12.0 454.1 12.0 450.0C12.0 445.9 12.6 442.6 14.0 440.0C15.6 436.8 16.0 434.1 16.0 426.0C16.0 417.9 16.4 415.2 18.0 412.0C19.1 409.8 20.0 407.1 20.0 406.0C20.0 404.9 20.9 402.2 22.0 400.0C23.1 397.8 24.0 394.2 24.0 392.0C24.0 389.8 24.9 386.2 26.0 384.0C27.1 381.8 28.0 378.2 28.0 376.0C28.0 373.8 28.9 370.2 30.0 368.0C31.1 365.8 32.0 363.1 32.0 362.0C32.0 360.9 32.9 358.2 34.0 356.0C35.1 353.8 36.0 351.2 36.0 350.0C36.0 348.9 38.7 342.6 42.0 336.0C45.3 329.4 48.0 323.0 48.0 321.7C48.0 320.4 49.8 316.9 52.0 314.0C55.3 309.5 56.0 307.9 56.0 304.0C56.0 300.2 56.7 298.4 59.4 294.9C63.7 289.2 68.0 280.7 68.0 277.7C68.0 276.5 69.6 273.2 71.5 270.5C79.8 258.8 82.2 255.1 85.4 248.9C87.4 245.2 90.4 241.2 92.4 239.6C95.0 237.7 96.0 236.1 96.0 234.2C96.0 231.0 101.6 222.4 107.6 216.6C109.9 214.3 112.8 210.5 114.0 208.0C115.2 205.5 118.1 201.7 120.4 199.4C122.6 197.1 127.0 192.0 130.0 188.1C137.3 178.5 163.4 152.4 170.0 148.0C173.0 146.1 179.0 140.8 183.5 136.2C189.6 130.1 192.4 128.0 194.3 128.0C196.1 128.0 197.7 127.0 199.2 124.9C201.3 122.1 205.8 118.6 216.0 112.0C226.2 105.4 229.4 103.2 234.2 99.7C237.2 97.6 240.5 96.0 242.1 96.0C244.1 96.0 245.7 94.9 248.0 92.0C250.4 89.0 251.9 88.0 254.0 88.0C256.1 88.0 257.6 87.0 260.0 84.0C262.9 80.3 263.6 80.0 268.0 80.0C272.4 80.0 273.1 79.7 276.0 76.0C278.3 73.1 279.9 72.0 281.9 72.0C283.5 72.0 286.8 70.4 290.0 68.0C294.5 64.7 296.1 64.0 300.1 64.0C304.4 64.0 305.1 63.7 308.0 60.0C311.1 56.0 311.2 56.0 318.0 56.0C324.8 56.0 324.9 56.0 328.0 52.0C330.9 48.3 331.6 48.0 335.9 48.0C339.9 48.0 341.5 47.3 346.0 44.0C351.3 40.1 351.5 40.0 360.0 40.0C368.5 40.0 368.7 39.9 374.0 36.0C379.3 32.1 379.5 32.0 388.0 32.0C396.5 32.0 396.7 31.9 402.0 28.0C407.4 24.0 407.4 24.0 422.0 24.0C436.6 24.0 436.6 24.0 442.0 20.0C447.4 16.0 447.4 16.0 471.7 16.0C494.1 16.0 496.4 15.8 500.0 14.0C502.2 12.9 504.9 12.0 506.0 12.0C507.1 12.0 509.8 11.1 512.0 10.0C518.0 7.0 562.0 7.0 568.0 10.0C570.2 11.1 573.8 12.0 576.0 12.0C578.2 12.0 581.8 12.9 584.0 14.0C587.6 15.8 589.9 16.0 610.3 16.0C632.6 16.0 632.6 16.0 638.0 20.0C643.4 24.0 643.4 24.0 656.0 24.0C668.6 24.0 668.6 24.0 674.0 28.0C679.3 32.0 679.5 32.0 688.1 32.0C696.8 32.0 696.8 32.0 700.0 36.0C703.1 40.0 703.2 40.0 709.9 40.0C716.2 40.0 717.0 40.3 722.0 44.0C727.0 47.7 727.8 48.0 734.1 48.0C740.8 48.0 740.9 48.0 744.0 52.0C746.9 55.7 747.6 56.0 752.0 56.0C756.4 56.0 757.1 56.3 760.0 60.0C762.9 63.7 763.6 64.0 768.0 64.0C772.4 64.0 773.1 64.3 776.0 68.0C778.3 70.9 779.9 72.0 781.9 72.0C783.5 72.0 786.8 73.6 790.0 76.0C793.1 78.3 796.5 80.0 798.0 80.0C801.1 80.0 809.8 85.8 815.5 91.8C818.3 94.6 820.4 96.0 822.2 96.0C824.1 96.0 825.7 97.2 828.0 100.0C830.4 103.0 831.9 104.0 834.0 104.0C836.1 104.0 837.6 105.0 840.0 108.0C842.4 111.0 843.9 112.0 846.0 112.0C848.1 112.0 849.6 113.0 852.0 116.0C854.2 118.8 855.9 120.0 857.7 120.0C859.6 120.0 862.5 122.2 868.5 128.3C873.0 132.8 879.0 138.1 881.9 140.0C889.7 145.2 923.4 178.8 926.0 184.1C927.2 186.5 930.0 190.3 932.2 192.5C937.1 197.4 948.0 210.9 948.0 212.0C948.0 212.5 950.4 215.7 953.4 219.2C956.3 222.7 960.1 228.3 961.8 231.7C963.5 235.1 966.3 238.8 968.0 240.0C970.2 241.5 973.2 246.4 978.1 256.3C982.0 264.1 986.7 272.4 988.6 274.8C990.5 277.3 992.0 280.5 992.0 282.0C992.0 283.5 993.7 286.9 996.0 290.0C998.3 293.1 1000.0 296.5 1000.0 298.0C1000.0 299.5 1001.7 302.9 1004.0 306.0C1006.2 308.9 1008.0 312.4 1008.0 313.7C1008.0 315.0 1009.8 319.6 1012.0 324.0C1014.7 329.4 1016.0 333.3 1016.0 336.0C1016.0 338.7 1017.3 342.6 1020.0 348.0C1022.7 353.4 1024.0 357.3 1024.0 360.0C1024.0 362.7 1025.3 366.6 1028.0 372.0C1032.0 380.0 1032.0 380.0 1032.0 392.0C1032.0 401.5 1032.4 404.8 1033.7 407.3C1034.6 409.1 1035.7 413.0 1036.1 416.0C1036.4 419.0 1037.4 423.0 1038.1 424.8C1041.1 432.1 1050.9 431.5 920.6 431.8L803.8 432.0L798.0 426.2C794.9 423.0 791.2 418.4 790.0 416.0C788.6 413.3 781.4 405.3 772.0 396.0C762.4 386.5 755.4 378.7 754.0 376.0C751.5 371.1 744.0 363.6 730.0 352.0C725.0 347.9 713.3 337.1 704.1 328.0C694.8 318.9 684.9 309.9 682.0 308.0C679.0 306.1 673.0 300.8 668.5 296.2C662.9 290.6 659.5 288.0 657.9 288.0C656.5 288.0 654.0 286.4 651.5 283.8C649.2 281.4 645.0 277.9 642.0 276.0C639.0 274.1 634.8 270.6 632.5 268.2C629.7 265.4 627.6 264.0 625.8 264.0C623.9 264.0 622.3 262.8 620.0 260.0C617.6 257.0 616.1 256.0 614.0 256.0C611.9 256.0 610.4 255.0 608.0 252.0C605.7 249.1 604.1 248.0 602.1 248.0C600.5 248.0 597.2 246.4 594.0 244.0C591.1 241.8 588.4 240.0 588.0 240.0C587.6 240.0 584.9 238.2 582.0 236.0C578.8 233.6 575.5 232.0 573.9 232.0C571.9 232.0 570.3 230.9 568.0 228.0C565.1 224.3 564.4 224.0 560.0 224.0C555.6 224.0 554.9 223.7 552.0 220.0C549.1 216.3 548.4 216.0 544.1 216.0C540.1 216.0 538.5 215.3 534.0 212.0C530.8 209.6 527.5 208.0 525.9 208.0C523.9 208.0 522.3 206.9 520.0 204.0C516.9 200.0 516.8 200.0 510.1 200.0C503.8 200.0 503.0 199.7 498.0 196.0C493.5 192.7 491.9 192.0 488.0 192.0C484.1 192.0 482.5 191.3 478.0 188.0C472.7 184.1 472.5 184.0 464.0 184.0C455.5 184.0 455.3 183.9 450.0 180.0C444.6 176.0 444.6 176.0 434.0 176.0C423.4 176.0 423.4 176.0 418.0 172.0C412.6 168.0 412.6 168.0 386.3 168.0C361.9 168.0 359.6 167.9 356.0 166.0C350.7 163.3 341.3 163.3 336.0 166.0C332.4 167.9 330.1 168.0 303.6 168.0C275.2 168.0 275.2 168.0 272.0 172.0C268.8 176.0 268.8 176.0 260.1 176.0C251.5 176.0 251.3 176.0 246.0 180.0C241.5 183.3 239.9 184.0 236.0 184.0C232.1 184.0 230.5 184.7 226.0 188.0C222.9 190.3 219.5 192.0 218.0 192.0C216.5 192.0 213.3 193.5 210.9 195.3C208.5 197.1 205.1 199.5 203.3 200.6C195.6 205.2 188.9 210.2 188.0 212.1C187.4 213.1 185.2 215.1 183.1 216.4C178.3 219.5 150.4 247.3 148.5 251.0C147.7 252.5 145.5 254.9 143.6 256.4C140.3 258.8 140.0 259.6 140.0 264.0C140.0 268.4 139.7 269.1 136.0 272.0C132.4 274.8 132.0 275.6 132.0 279.6C132.0 282.1 131.1 285.8 130.0 288.0C128.9 290.2 128.0 293.8 128.0 296.0C128.0 298.2 127.1 301.8 126.0 304.0C124.5 307.0 124.0 309.9 124.0 316.0C124.0 322.1 123.5 325.0 122.0 328.0C119.1 333.7 119.1 354.3 122.0 360.0C123.6 363.2 124.0 365.9 124.0 374.0C124.0 382.1 124.4 384.8 126.0 388.0C127.1 390.2 128.0 393.8 128.0 396.0C128.0 398.2 128.9 401.8 130.0 404.0C131.1 406.2 132.0 408.9 132.0 410.0C132.0 411.1 132.9 413.8 134.0 416.0C135.1 418.2 136.0 420.9 136.0 422.0C136.0 423.1 136.9 425.8 138.0 428.0C139.1 430.2 140.0 432.8 140.0 434.0C140.0 438.0 172.9 502.1 178.0 508.0C180.6 511.0 184.2 516.4 186.0 520.0C187.8 523.6 191.4 529.0 194.0 532.0C196.6 535.0 200.1 540.3 201.8 543.7C203.5 547.0 206.3 550.8 208.0 552.0C209.7 553.2 212.2 556.5 213.6 559.3C215.2 562.4 219.4 567.6 224.0 572.0C228.3 576.1 232.9 581.8 234.4 584.5C235.8 587.2 239.7 592.0 243.1 595.0C250.5 601.7 254.2 605.4 277.5 629.2C290.6 642.6 296.6 648.0 298.2 648.0C299.5 648.0 302.1 649.7 304.5 652.2C306.8 654.6 311.0 658.1 314.0 660.0C317.0 661.9 321.2 665.3 323.5 667.5C327.3 671.4 331.6 674.6 340.0 680.0C349.8 686.3 354.7 690.0 356.8 692.9C358.4 695.1 359.9 696.0 361.9 696.0C364.1 696.0 365.6 697.0 368.0 700.0C370.4 703.0 371.9 704.0 374.0 704.0C376.1 704.0 377.6 705.0 380.0 708.0C382.4 711.0 383.9 712.0 386.0 712.0C388.1 712.0 389.6 713.0 392.0 716.0C394.3 718.9 395.9 720.0 397.9 720.0C399.5 720.0 402.8 721.6 406.0 724.0C409.2 726.4 412.5 728.0 414.1 728.0C416.1 728.0 417.7 729.1 420.0 732.0C422.9 735.7 423.6 736.0 427.9 736.0C431.9 736.0 433.5 736.7 438.0 740.0C441.2 742.4 444.5 744.0 446.1 744.0C448.1 744.0 449.7 745.1 452.0 748.0C454.9 751.7 455.6 752.0 460.0 752.0C464.4 752.0 465.1 752.3 468.0 756.0C471.1 760.0 471.2 760.0 477.9 760.0C484.2 760.0 485.0 760.3 490.0 764.0C494.5 767.3 496.1 768.0 500.0 768.0C503.9 768.0 505.5 768.7 510.0 772.0C515.3 775.9 515.5 776.0 524.0 776.0C532.5 776.0 532.7 776.1 538.0 780.0C543.3 783.9 543.5 784.0 552.0 784.0C560.5 784.0 560.7 784.1 566.0 788.0C571.4 792.0 571.4 792.0 583.7 792.0C596.0 792.0 596.0 792.0 604.0 796.0C612.0 800.0 612.0 800.0 630.0 800.0C648.0 800.0 648.0 800.0 656.0 804.0C664.0 808.0 664.0 808.0 698.4 808.0C732.8 808.0 732.8 808.0 736.0 804.0C739.2 800.0 739.2 800.0 755.9 800.0C772.6 800.0 772.6 800.0 778.0 796.0C783.4 792.0 783.4 792.0 794.0 792.0C804.6 792.0 804.6 792.0 810.0 788.0C814.5 784.7 816.1 784.0 820.0 784.0C823.9 784.0 825.5 783.3 830.0 780.0C834.5 776.7 836.1 776.0 840.1 776.0C844.4 776.0 845.1 775.7 848.0 772.0C850.9 768.3 851.6 768.0 856.0 768.0C860.4 768.0 861.1 767.7 864.0 764.0C866.4 761.0 867.9 760.0 870.0 760.0C872.1 760.0 873.6 759.0 876.0 756.0C878.1 753.3 880.0 752.0 881.6 752.0C886.5 752.0 927.0 709.9 932.4 699.2C935.3 693.5 938.1 689.4 940.0 688.0C943.4 685.6 952.0 669.6 952.0 665.7C952.0 664.4 953.8 660.9 956.0 658.0C959.2 653.7 960.0 651.8 960.0 648.3C960.0 645.2 961.2 641.6 964.0 636.0C966.8 630.3 968.0 626.8 968.0 623.7C968.0 616.0 967.9 616.0 939.9 616.0C915.4 616.0 915.4 616.0 910.0 620.0C904.6 624.0 904.6 624.0 886.3 624.0C868.0 624.0 868.0 624.0 860.0 628.0C852.0 632.0 852.0 632.0 838.0 632.0C825.9 632.0 823.4 632.3 820.0 634.0C817.8 635.1 815.1 636.0 814.0 636.0C812.9 636.0 810.2 636.9 808.0 638.0C804.6 639.8 802.1 640.0 788.0 640.0C772.0 640.0 772.0 640.0 764.0 644.0C756.0 648.0 756.0 648.0 739.6 648.0C723.2 648.0 723.2 648.0 720.0 652.0C716.8 656.0 716.8 656.0 704.4 656.0C692.0 656.0 692.0 656.0 683.9 660.0C670.4 666.8 658.4 665.1 661.9 656.8C664.4 651.0 664.4 644.7 662.1 640.1C659.4 634.9 659.3 589.2 662.0 583.3C663.2 580.7 663.2 579.5 662.1 576.2C660.5 571.5 661.0 568.7 664.3 563.9C666.6 560.5 666.6 560.5 851.4 560.2C993.2 560.1 1036.6 560.3 1037.7 561.2C1038.5 561.8 1040.2 564.5 1041.6 567.2C1044.0 571.9 1044.0 571.9 1044.0 764.3C1044.0 977.2 1044.5 960.0 1038.1 960.0C1036.9 960.0 1034.2 960.9 1032.0 962.0C1028.2 963.9 1026.1 964.0 978.0 964.0C929.9 964.0 927.8 963.9 924.0 962.0C921.8 960.9 919.2 960.0 918.2 960.0C913.7 960.0 913.7 954.3 918.1 944.2C919.4 941.2 920.0 937.6 920.0 932.0C920.0 924.6 920.3 923.3 924.0 916.0C927.7 908.7 928.0 907.4 928.0 900.0C928.0 892.6 928.3 891.3 932.0 884.0C935.9 876.3 936.0 875.8 936.0 865.7C936.0 855.4 936.0 855.4 940.0 850.0C944.0 844.6 944.0 844.6 944.0 832.3C944.0 820.0 944.0 820.0 948.0 812.0C952.0 804.0 952.0 804.0 952.0 792.0C952.0 781.9 952.3 779.3 954.0 776.0C955.1 773.8 956.0 770.2 956.0 768.0C956.0 765.8 956.9 762.2 958.0 760.0C960.4 755.4 961.0 729.4 958.8 727.2C956.8 725.2 954.2 727.7 950.4 735.3C946.7 742.6 939.4 752.3 932.2 759.5C930.0 761.7 927.2 765.5 926.0 768.0C924.8 770.5 920.3 775.9 916.0 780.0C911.7 784.1 907.2 789.5 906.0 792.0C904.7 794.5 898.4 801.9 891.6 808.6C885.0 815.3 877.5 823.2 875.1 826.2C872.7 829.1 868.5 833.3 865.8 835.5C863.1 837.7 857.2 843.1 852.7 847.5C844.9 855.1 841.0 858.3 832.0 864.0C822.2 870.3 817.3 874.0 815.2 876.9C813.6 879.1 812.1 880.0 810.1 880.0C807.9 880.0 806.4 881.0 804.0 884.0C801.6 887.0 800.1 888.0 798.0 888.0C795.9 888.0 794.4 889.0 792.0 892.0C789.6 895.0 788.1 896.0 786.0 896.0C783.9 896.0 782.4 897.0 780.0 900.0C777.7 902.9 776.1 904.0 774.1 904.0C772.5 904.0 769.2 905.6 766.0 908.0C762.8 910.4 759.5 912.0 757.9 912.0C755.9 912.0 754.3 913.1 752.0 916.0C749.1 919.7 748.4 920.0 744.0 920.0C739.6 920.0 738.9 920.3 736.0 924.0C733.1 927.7 732.4 928.0 728.1 928.0C724.1 928.0 722.5 928.7 718.0 932.0C714.9 934.3 711.5 936.0 710.0 936.0C708.5 936.0 705.1 937.7 702.0 940.0C697.5 943.3 695.9 944.0 692.0 944.0C688.1 944.0 686.5 944.7 682.0 948.0C677.0 951.7 676.2 952.0 670.0 952.0C663.8 952.0 663.0 952.3 658.0 956.0C653.1 959.7 652.1 960.0 646.3 960.0C640.9 960.0 638.8 960.6 632.0 964.0C625.3 967.4 623.1 968.0 618.0 968.0C613.9 968.0 610.6 968.7 608.0 970.0C605.8 971.1 602.2 972.0 600.0 972.0C597.8 972.0 594.2 972.9 592.0 974.0C588.5 975.8 586.1 976.0 568.0 976.0C549.9 976.0 547.5 976.2 544.0 978.0C541.8 979.1 539.1 980.0 538.0 980.0C536.9 980.0 534.2 980.9 532.0 982.0C526.1 985.0 465.5 985.0 460.0 982.0ZM2430.0 964.0C2424.6 960.0 2424.6 960.0 2414.0 960.0C2403.4 960.0 2403.4 960.0 2398.0 956.0C2393.5 952.7 2391.9 952.0 2388.0 952.0C2384.1 952.0 2382.5 951.3 2378.0 948.0C2374.8 945.6 2371.5 944.0 2369.9 944.0C2367.9 944.0 2366.3 942.9 2364.0 940.0C2361.8 937.3 2360.0 936.0 2358.4 936.0C2353.3 936.0 2328.0 909.0 2328.0 903.6C2328.0 899.6 2327.6 898.8 2324.0 896.0C2320.4 893.2 2320.0 892.4 2320.0 888.4C2320.0 885.2 2318.9 881.7 2316.0 876.0C2313.3 870.6 2312.0 866.7 2312.0 864.0C2312.0 861.3 2310.7 857.4 2308.0 852.0C2304.0 844.0 2304.0 844.0 2304.0 808.0C2304.0 773.9 2304.1 771.7 2306.0 768.0C2307.1 765.8 2308.0 762.2 2308.0 760.0C2308.0 757.8 2308.9 754.2 2310.0 752.0C2311.5 749.0 2312.0 746.1 2312.0 740.0C2312.0 732.0 2312.0 732.0 2320.0 716.0C2326.4 703.2 2328.0 699.1 2328.0 695.6C2328.0 691.6 2328.4 690.8 2332.0 688.0C2335.7 685.1 2336.0 684.4 2336.0 680.0C2336.0 675.6 2336.3 674.9 2340.0 672.0C2343.6 669.2 2344.0 668.4 2344.0 664.4C2344.0 658.3 2351.5 643.4 2356.4 639.6C2359.7 637.2 2360.0 636.4 2360.0 632.0C2360.0 627.6 2360.3 626.9 2364.0 624.0C2366.9 621.7 2368.0 620.1 2368.0 618.1C2368.0 616.4 2369.4 613.4 2371.4 610.8C2373.3 608.4 2378.9 598.3 2383.8 588.4C2390.8 574.4 2393.6 569.8 2396.4 567.6C2399.0 565.6 2400.0 564.1 2400.0 562.1C2400.0 560.4 2401.4 557.5 2403.4 554.8C2405.3 552.4 2411.9 540.3 2418.0 527.9C2425.7 512.7 2430.8 503.7 2434.0 500.0C2437.3 496.1 2442.6 486.7 2451.8 468.4C2462.3 447.3 2465.5 441.9 2468.4 439.6C2471.0 437.6 2472.0 436.1 2472.0 434.1C2472.0 432.4 2473.4 429.5 2475.4 426.8C2477.3 424.4 2485.6 408.8 2493.9 392.3C2505.4 369.1 2509.6 361.7 2512.0 360.0C2515.4 357.6 2520.0 349.4 2520.0 345.7C2520.0 344.4 2521.5 341.3 2523.4 338.8C2525.3 336.4 2530.0 328.1 2533.9 320.3C2538.8 310.4 2541.8 305.5 2544.0 304.0C2546.4 302.3 2551.2 293.6 2566.0 264.1C2581.7 232.7 2585.4 225.9 2588.4 223.6C2591.0 221.6 2592.0 220.1 2592.0 218.1C2592.0 216.4 2593.4 213.5 2595.4 210.8C2597.3 208.4 2603.9 196.3 2610.0 183.9C2617.7 168.7 2622.8 159.7 2626.0 156.0C2629.3 152.1 2634.6 142.7 2643.8 124.4C2654.3 103.3 2657.5 97.9 2660.4 95.6C2663.0 93.6 2664.0 92.1 2664.0 90.1C2664.0 88.4 2665.4 85.5 2667.4 82.8C2669.3 80.4 2676.0 68.0 2682.3 55.3C2696.7 26.5 2699.3 24.4 2712.8 30.1C2715.5 31.2 2716.5 31.2 2719.2 30.0C2725.4 27.2 2887.9 27.3 2891.4 30.1C2895.4 33.2 2904.0 51.0 2904.0 56.0C2904.0 59.0 2906.0 64.0 2912.0 76.0C2918.0 88.0 2920.0 93.0 2920.0 96.0C2920.0 99.0 2922.0 104.0 2928.0 116.0C2934.3 128.6 2936.0 132.9 2936.0 136.3C2936.0 139.8 2936.8 141.7 2940.0 146.0C2942.2 148.9 2944.0 152.4 2944.0 153.7C2944.0 155.0 2946.7 161.4 2950.0 168.0C2954.4 176.7 2956.0 181.1 2956.0 184.0C2956.0 187.1 2958.3 192.6 2966.0 208.0C2974.2 224.3 2976.0 228.8 2976.0 232.4C2976.0 236.4 2976.4 237.2 2980.0 240.0C2983.6 242.8 2984.0 243.6 2984.0 247.6C2984.0 251.1 2985.6 255.2 2992.0 268.0C2998.4 280.8 3000.0 284.9 3000.0 288.4C3000.0 292.4 3000.4 293.2 3004.0 296.0C3007.6 298.8 3008.0 299.6 3008.0 303.6C3008.0 307.0 3009.4 310.8 3014.0 320.0C3018.4 328.7 3020.0 333.1 3020.0 336.0C3020.0 339.1 3022.6 345.3 3032.0 364.0C3041.4 382.7 3044.0 388.9 3044.0 392.0C3044.0 395.1 3046.3 400.6 3054.0 416.0C3062.0 432.1 3064.0 436.8 3064.0 440.3C3064.0 443.8 3064.8 445.7 3068.0 450.0C3070.2 452.9 3072.0 456.4 3072.0 457.7C3072.0 459.0 3075.6 467.2 3080.0 476.0C3086.0 488.0 3088.0 493.0 3088.0 496.0C3088.0 499.1 3090.3 504.6 3098.0 520.0C3103.5 531.0 3108.0 540.9 3108.0 542.0C3108.0 543.2 3108.9 545.8 3110.0 548.0C3111.1 550.2 3112.0 552.8 3112.0 554.0C3112.0 555.1 3115.6 563.2 3120.0 572.0C3126.0 584.0 3128.0 589.0 3128.0 592.0C3128.0 595.0 3130.0 600.0 3136.0 612.0C3142.4 624.8 3144.0 628.9 3144.0 632.4C3144.0 636.4 3144.4 637.2 3148.0 640.0C3151.6 642.8 3152.0 643.6 3152.0 647.6C3152.0 651.2 3154.1 656.2 3164.0 676.0C3173.4 694.7 3176.0 700.9 3176.0 704.0C3176.0 707.0 3178.0 712.0 3184.0 724.0C3190.0 736.0 3192.0 741.0 3192.0 744.0C3192.0 747.1 3194.3 752.6 3202.0 768.0C3207.5 779.0 3212.0 788.9 3212.0 790.0C3212.0 791.2 3212.9 793.8 3214.0 796.0C3215.1 798.2 3216.0 800.8 3216.0 802.0C3216.0 803.1 3219.6 811.2 3224.0 820.0C3230.0 832.0 3232.0 837.0 3232.0 840.0C3232.0 843.0 3234.0 848.0 3240.0 860.0C3246.0 872.0 3248.0 877.0 3248.0 880.0C3248.0 883.1 3250.6 889.3 3260.0 908.0C3269.4 926.7 3272.0 932.9 3272.0 936.0C3272.0 938.7 3273.3 942.7 3276.0 948.0C3280.4 956.8 3280.9 959.9 3278.2 962.3C3276.5 963.9 3266.8 964.0 3159.8 964.0C3026.1 964.0 3040.0 965.2 3040.0 953.9C3040.0 947.8 3039.7 947.0 3036.0 942.0C3033.8 939.1 3032.0 935.6 3032.0 934.3C3032.0 933.0 3030.2 928.4 3028.0 924.0C3025.3 918.7 3024.0 914.7 3024.0 912.0C3024.0 908.9 3021.4 902.7 3012.0 884.0C3002.6 865.3 3000.0 859.1 3000.0 856.0C3000.0 852.9 2997.7 847.4 2990.0 832.0C2984.5 821.0 2980.0 811.1 2980.0 810.0C2980.0 808.8 2979.1 806.2 2978.0 804.0C2976.9 801.8 2976.0 799.2 2976.0 798.0C2976.0 796.9 2974.2 792.4 2972.0 788.0C2969.1 782.3 2968.0 778.8 2968.0 775.6C2968.0 771.6 2967.6 770.8 2964.0 768.0C2960.4 765.2 2960.0 764.4 2960.0 760.4C2960.0 756.9 2958.4 752.8 2952.0 740.0C2946.0 728.0 2944.0 723.0 2944.0 720.0C2944.0 717.0 2942.0 712.0 2936.0 700.0C2930.0 688.0 2928.0 683.0 2928.0 680.0C2928.0 677.0 2926.0 672.0 2920.0 660.0C2914.0 648.0 2912.0 643.0 2912.0 640.0C2912.0 637.0 2910.0 632.0 2904.0 620.0C2897.6 607.3 2896.0 603.1 2896.0 599.6C2896.0 594.9 2894.3 592.6 2891.3 593.2C2889.2 593.6 2880.1 610.3 2880.0 613.8C2880.0 615.0 2879.1 617.8 2878.0 620.0C2876.9 622.2 2876.0 624.8 2876.0 626.0C2876.0 627.1 2873.3 633.4 2870.0 640.0C2866.7 646.6 2864.0 652.9 2864.0 654.0C2864.0 655.1 2862.2 659.6 2860.0 664.0C2857.8 668.4 2856.0 672.9 2856.0 674.0C2856.0 678.1 2815.3 757.6 2812.0 760.0C2810.0 761.4 2807.2 765.7 2803.8 772.3C2801.0 777.9 2796.6 785.0 2794.0 788.0C2791.4 791.0 2788.0 796.0 2786.5 799.0C2785.0 802.0 2781.9 806.3 2779.6 808.6C2777.4 810.9 2773.0 816.0 2770.0 819.9C2767.0 823.9 2760.6 831.2 2755.8 836.0C2750.9 840.9 2747.0 845.3 2747.0 845.8C2747.0 847.3 2716.2 877.9 2713.1 879.5C2711.6 880.2 2709.1 882.5 2707.6 884.4C2705.7 886.9 2704.1 888.0 2702.3 888.0C2700.3 888.0 2697.8 890.0 2692.0 896.0C2686.3 902.0 2683.7 904.0 2681.8 904.0C2679.9 904.0 2678.2 905.2 2676.0 908.0C2673.1 911.6 2672.4 912.0 2668.2 912.0C2664.1 912.0 2663.1 912.5 2659.5 916.2C2653.8 922.2 2645.1 928.0 2642.0 928.0C2640.5 928.0 2637.1 929.7 2634.0 932.0C2630.9 934.3 2627.5 936.0 2626.0 936.0C2624.5 936.0 2621.1 937.7 2618.0 940.0C2613.5 943.3 2611.9 944.0 2608.0 944.0C2604.1 944.0 2602.5 944.7 2598.0 948.0C2592.7 951.9 2592.5 952.0 2584.0 952.0C2575.5 952.0 2575.3 952.1 2570.0 956.0C2564.7 959.9 2564.5 960.0 2556.3 960.0C2548.6 960.0 2547.4 960.3 2540.0 964.0C2532.0 968.0 2532.0 968.0 2483.7 968.0C2435.4 968.0 2435.4 968.0 2430.0 964.0ZM1121.7 962.2C1118.9 959.2 1119.1 308.1 1121.8 305.7C1123.4 304.2 1126.9 304.0 1150.1 304.0C1176.6 304.0 1176.6 304.0 1182.0 300.0C1187.3 296.0 1187.5 296.0 1196.1 296.0C1204.8 296.0 1204.8 296.0 1208.0 292.0C1210.9 288.3 1211.6 288.0 1215.9 288.0C1219.9 288.0 1221.5 287.3 1226.0 284.0C1230.5 280.7 1232.1 280.0 1236.1 280.0C1240.4 280.0 1241.1 279.7 1244.0 276.0C1246.3 273.1 1247.9 272.0 1249.9 272.0C1251.5 272.0 1254.8 270.4 1258.0 268.0C1261.2 265.6 1264.5 264.0 1266.1 264.0C1268.1 264.0 1269.7 262.9 1272.0 260.0C1274.4 257.0 1275.9 256.0 1278.1 256.0C1280.1 256.0 1281.6 255.1 1283.2 252.9C1285.3 250.0 1291.5 245.3 1299.4 240.5C1301.2 239.4 1306.4 235.2 1310.9 231.2C1319.8 223.3 1330.0 220.9 1334.2 225.8C1337.2 229.2 1340.0 236.0 1340.0 240.0C1340.0 242.2 1340.9 245.8 1342.0 248.0C1344.0 251.9 1344.0 253.9 1344.0 604.6C1344.0 957.2 1344.0 957.2 1340.6 960.6C1337.2 964.0 1337.2 964.0 1230.3 964.0C1127.9 964.0 1123.2 963.9 1121.7 962.2ZM1432.0 962.0C1430.0 960.9 1426.5 960.1 1423.9 960.0C1420.8 960.0 1418.8 959.4 1417.7 958.2C1414.9 955.2 1415.1 32.1 1417.8 29.7C1421.0 26.8 1946.4 27.1 1952.0 30.0C1955.5 31.8 1957.9 32.0 1976.0 32.0C1994.1 32.0 1996.5 32.2 2000.0 34.0C2002.2 35.1 2004.9 36.0 2006.0 36.0C2007.1 36.0 2009.8 36.9 2012.0 38.0C2015.2 39.6 2017.9 40.0 2026.3 40.0C2036.6 40.0 2036.6 40.0 2042.0 44.0C2047.3 47.9 2047.5 48.0 2055.7 48.0C2063.4 48.0 2064.6 48.3 2072.0 52.0C2077.7 54.9 2081.2 56.0 2084.4 56.0C2088.4 56.0 2089.2 56.4 2092.0 60.0C2095.1 64.0 2095.2 64.0 2102.0 64.0C2108.8 64.0 2108.9 64.0 2112.0 68.0C2114.9 71.7 2115.6 72.0 2119.9 72.0C2123.9 72.0 2125.5 72.7 2130.0 76.0C2133.1 78.3 2136.5 80.0 2138.0 80.0C2139.5 80.0 2142.9 81.7 2146.0 84.0C2149.2 86.4 2152.5 88.0 2154.1 88.0C2156.1 88.0 2157.7 89.1 2160.0 92.0C2162.4 95.0 2163.9 96.0 2166.0 96.0C2168.1 96.0 2169.6 97.0 2172.0 100.0C2174.3 102.8 2175.9 104.0 2177.8 104.0C2179.6 104.0 2181.7 105.4 2184.5 108.2C2186.8 110.6 2191.0 114.1 2193.9 116.0C2196.9 117.9 2205.1 125.1 2212.1 132.0C2219.2 138.9 2227.0 146.3 2229.6 148.5C2232.1 150.6 2234.9 153.8 2235.7 155.5C2236.6 157.1 2239.7 161.3 2242.7 164.8C2245.6 168.3 2248.0 171.5 2248.0 172.0C2248.0 172.5 2250.4 175.8 2253.4 179.3C2260.9 188.1 2288.0 242.0 2288.0 248.0C2288.0 250.3 2288.9 253.8 2290.0 256.0C2291.1 258.2 2292.0 261.8 2292.0 264.0C2292.0 266.2 2292.9 269.8 2294.0 272.0C2295.8 275.5 2296.0 277.9 2296.0 296.0C2296.0 314.1 2296.2 316.5 2298.0 320.0C2299.5 323.0 2300.0 325.9 2300.0 332.0C2300.0 338.1 2299.5 341.0 2298.0 344.0C2296.3 347.4 2296.0 349.9 2296.0 362.0C2296.0 374.1 2295.7 376.6 2294.0 380.0C2292.9 382.2 2292.0 384.9 2292.0 386.0C2292.0 387.1 2291.1 389.8 2290.0 392.0C2288.9 394.2 2288.0 397.7 2288.0 400.0C2288.0 402.7 2286.7 406.6 2284.0 412.0C2281.3 417.4 2280.0 421.3 2280.0 424.0C2280.0 429.6 2264.6 460.3 2258.0 468.0C2255.4 471.0 2252.0 475.9 2250.6 478.9C2247.4 485.2 2206.7 526.2 2197.9 532.0C2195.0 533.9 2190.8 537.4 2188.5 539.8C2185.7 542.6 2183.6 544.0 2181.8 544.0C2179.9 544.0 2178.3 545.2 2176.0 548.0C2173.1 551.7 2172.4 552.0 2168.0 552.0C2163.6 552.0 2162.9 552.3 2160.0 556.0C2157.6 559.0 2156.1 560.0 2154.0 560.0C2151.9 560.0 2150.4 561.0 2148.0 564.0C2145.1 567.7 2144.4 568.0 2140.1 568.0C2136.1 568.0 2134.5 568.7 2130.0 572.0C2125.0 575.7 2124.2 576.0 2118.0 576.0C2111.8 576.0 2111.0 576.3 2106.0 580.0C2101.0 583.7 2100.2 584.0 2094.0 584.0C2087.8 584.0 2087.0 584.3 2082.0 588.0C2076.6 592.0 2076.6 592.0 2062.0 592.0C2047.3 592.0 2047.3 592.0 2040.6 597.1C2036.4 600.3 2034.2 602.5 2034.7 603.3C2039.1 610.7 2042.3 615.0 2044.4 616.4C2045.8 617.3 2048.4 620.8 2050.1 624.2C2053.2 630.3 2059.8 639.1 2068.0 648.0C2076.2 656.9 2082.8 665.7 2085.8 671.7C2087.5 675.1 2090.3 678.8 2092.0 680.0C2093.7 681.2 2096.4 684.8 2098.0 688.0C2099.6 691.2 2102.3 694.8 2104.0 696.0C2105.7 697.2 2108.2 700.5 2109.6 703.3C2111.0 706.2 2114.0 710.3 2116.2 712.5C2123.1 719.4 2130.6 729.3 2133.8 735.7C2135.5 739.1 2138.3 742.8 2140.0 744.0C2141.7 745.2 2144.2 748.5 2145.6 751.3C2147.1 754.2 2150.1 758.3 2152.4 760.6C2154.6 762.9 2159.0 768.0 2162.0 772.0C2165.0 776.0 2169.4 781.1 2171.6 783.4C2173.9 785.7 2176.9 789.8 2178.4 792.7C2179.8 795.5 2182.3 798.8 2184.0 800.0C2185.7 801.2 2188.4 804.8 2190.0 808.0C2191.6 811.2 2194.3 814.8 2196.0 816.0C2197.7 817.2 2200.4 820.8 2202.0 824.0C2203.6 827.2 2206.3 830.8 2208.0 832.0C2209.7 833.2 2212.2 836.5 2213.6 839.3C2215.0 842.2 2218.0 846.3 2220.2 848.5C2225.0 853.3 2236.0 866.8 2236.0 868.0C2236.0 868.5 2238.7 872.1 2242.0 876.0C2245.3 879.9 2248.0 883.6 2248.0 884.0C2248.0 884.5 2250.4 887.7 2253.4 891.2C2256.3 894.7 2260.0 900.0 2261.5 903.0C2263.2 906.4 2267.2 911.4 2272.0 916.0C2278.1 921.9 2280.7 925.3 2284.0 932.0C2287.3 938.6 2289.9 942.1 2295.7 947.7C2304.4 956.1 2304.6 957.3 2297.5 961.3C2292.0 964.3 2285.5 964.6 2279.2 961.9C2276.5 960.8 2275.5 960.8 2272.8 962.0C2270.0 963.3 2253.4 963.5 2156.5 963.7C2026.6 964.0 2036.9 964.9 2030.2 952.2C2028.4 948.8 2025.7 945.2 2024.2 944.3C2018.7 940.9 2013.7 935.3 2010.4 928.8C2008.6 925.2 2005.7 921.2 2004.0 920.0C2002.3 918.8 1999.6 915.2 1998.0 912.0C1996.4 908.8 1993.7 905.2 1992.0 904.0C1990.3 902.8 1987.6 899.2 1986.0 896.0C1984.4 892.8 1981.7 889.2 1980.0 888.0C1978.3 886.8 1975.6 883.2 1974.0 880.0C1972.4 876.8 1969.7 873.2 1968.0 872.0C1966.3 870.8 1963.8 867.5 1962.4 864.7C1961.0 861.8 1958.0 857.7 1955.8 855.5C1948.9 848.6 1941.4 838.7 1938.2 832.3C1936.5 828.9 1933.7 825.2 1932.0 824.0C1930.3 822.8 1927.6 819.2 1926.0 816.0C1924.4 812.8 1921.7 809.2 1920.0 808.0C1918.3 806.8 1915.8 803.5 1914.4 800.7C1913.0 797.8 1910.0 793.7 1907.8 791.5C1900.9 784.6 1893.4 774.7 1890.2 768.3C1888.5 764.9 1885.7 761.2 1884.0 760.0C1882.3 758.8 1879.6 755.2 1878.0 752.0C1876.4 748.8 1873.7 745.2 1872.0 744.0C1870.3 742.8 1867.8 739.5 1866.4 736.7C1865.0 733.8 1862.0 729.7 1859.8 727.5C1852.9 720.6 1845.4 710.7 1842.2 704.3C1840.5 700.9 1837.7 697.2 1836.0 696.0C1834.3 694.8 1831.8 691.5 1830.3 688.7C1827.6 683.3 1823.6 678.9 1796.5 652.0C1793.8 649.4 1791.6 648.0 1789.8 648.0C1787.9 648.0 1786.3 646.9 1784.0 644.0C1781.7 641.1 1780.1 640.0 1778.1 640.0C1776.5 640.0 1773.2 638.4 1770.0 636.0C1765.5 632.7 1763.9 632.0 1759.9 632.0C1755.6 632.0 1754.9 631.7 1752.0 628.0C1748.9 624.0 1748.8 624.0 1742.1 624.0C1735.8 624.0 1735.0 623.7 1730.0 620.0C1724.7 616.1 1724.5 616.0 1716.3 616.0C1708.6 616.0 1707.4 615.7 1700.0 612.0C1692.3 608.1 1691.8 608.0 1681.7 608.0C1671.4 608.0 1671.4 608.0 1666.0 604.0C1659.6 599.2 1645.2 597.9 1641.7 601.8C1640.1 603.5 1640.0 617.3 1640.0 780.4C1640.0 957.2 1640.0 957.2 1636.6 960.6C1633.2 964.0 1633.2 964.0 1534.4 964.0C1438.9 963.9 1435.4 963.9 1432.0 962.0ZM2620.0 764.0C2626.8 760.6 2628.9 760.0 2634.3 760.0C2640.1 760.0 2641.1 759.7 2646.0 756.0C2650.5 752.7 2652.1 752.0 2656.1 752.0C2660.4 752.0 2661.1 751.7 2664.0 748.0C2666.9 744.3 2667.6 744.0 2672.0 744.0C2676.4 744.0 2677.1 743.7 2680.0 740.0C2682.9 736.3 2683.6 736.0 2688.0 736.0C2692.4 736.0 2693.1 735.7 2696.0 732.0C2698.4 729.0 2699.9 728.0 2702.0 728.0C2704.1 728.0 2705.6 727.0 2708.0 724.0C2710.3 721.2 2711.9 720.0 2713.8 720.0C2715.6 720.0 2717.7 718.6 2720.5 715.8C2722.8 713.4 2727.0 709.9 2730.0 708.0C2732.9 706.1 2737.4 702.5 2740.0 700.0C2742.6 697.5 2747.0 693.9 2750.0 692.0C2756.6 687.6 2798.7 645.5 2806.0 635.9C2809.0 632.0 2813.4 626.9 2815.6 624.6C2817.9 622.3 2820.9 618.2 2822.4 615.3C2823.8 612.5 2826.3 609.2 2828.0 608.0C2829.7 606.8 2832.5 603.1 2834.2 599.7C2835.9 596.3 2839.7 590.7 2842.6 587.2C2845.6 583.7 2848.0 580.5 2848.0 580.0C2848.0 579.5 2850.4 576.3 2853.4 572.8C2858.9 566.2 2871.0 543.8 2871.0 540.0C2871.0 538.9 2867.6 531.2 2863.5 523.0C2857.9 511.8 2856.0 507.0 2856.0 504.0C2856.0 500.9 2853.4 494.7 2844.0 476.0C2834.2 456.4 2832.0 451.2 2832.0 447.7C2832.0 444.2 2831.2 442.3 2828.0 438.0C2825.8 435.1 2824.0 431.6 2824.0 430.3C2824.0 429.0 2820.4 420.8 2816.0 412.0C2809.7 399.4 2808.0 395.1 2808.0 391.7C2808.0 388.2 2807.2 386.3 2804.0 382.0C2801.8 379.1 2800.0 375.6 2800.0 374.3C2800.0 373.0 2796.4 364.8 2792.0 356.0C2786.0 344.0 2784.0 339.0 2784.0 336.0C2784.0 333.0 2782.0 328.0 2776.0 316.0C2769.6 303.2 2768.0 299.1 2768.0 295.6C2768.0 291.6 2767.6 290.8 2764.0 288.0C2760.4 285.2 2760.0 284.4 2760.0 280.4C2760.0 276.8 2757.9 271.8 2748.0 252.0C2741.4 238.8 2736.0 227.1 2736.0 226.0C2736.0 224.9 2734.2 220.4 2732.0 216.0C2729.8 211.6 2728.0 207.0 2728.0 205.8C2727.9 202.7 2714.0 175.9 2711.8 174.6C2708.4 172.6 2706.5 175.5 2690.5 207.2C2679.4 229.2 2673.1 240.4 2669.9 244.2C2666.7 247.8 2661.1 257.7 2652.2 275.6C2641.7 296.7 2638.5 302.1 2635.6 304.4C2633.0 306.4 2632.0 307.9 2632.0 309.9C2632.0 311.6 2630.6 314.5 2628.6 317.2C2626.7 319.6 2616.6 338.9 2606.0 360.0C2590.8 390.3 2585.7 399.7 2581.4 404.7C2577.7 409.1 2576.0 412.0 2576.0 413.9C2576.0 415.6 2574.6 418.5 2572.6 421.2C2570.7 423.6 2565.1 433.7 2560.2 443.6C2553.2 457.6 2550.4 462.2 2547.6 464.4C2544.4 466.8 2544.0 467.6 2544.0 471.6C2544.0 477.7 2536.6 492.6 2531.6 496.4C2528.3 498.8 2528.0 499.6 2528.0 504.0C2528.0 508.4 2527.7 509.2 2524.4 511.6C2520.6 514.6 2464.0 625.5 2464.0 630.0C2464.0 631.2 2463.1 633.8 2462.0 636.0C2460.9 638.2 2460.0 640.9 2460.0 642.0C2460.0 643.2 2459.2 645.5 2458.2 647.3C2456.9 649.7 2456.4 653.8 2455.9 664.0C2455.6 672.2 2454.8 678.8 2454.0 680.8C2452.8 683.6 2452.8 684.4 2454.0 687.3C2454.9 689.4 2455.5 695.1 2455.8 703.7C2456.1 717.0 2456.1 717.0 2459.6 719.7C2462.0 721.5 2464.7 725.4 2467.7 731.4C2473.2 742.4 2474.5 744.0 2478.1 744.0C2480.1 744.0 2481.7 745.1 2484.0 748.0C2486.3 750.9 2487.9 752.0 2489.9 752.0C2491.5 752.0 2494.8 753.6 2498.0 756.0C2502.5 759.3 2504.1 760.0 2508.1 760.0C2512.4 760.0 2513.1 760.3 2516.0 764.0C2519.2 768.0 2519.2 768.0 2565.6 768.0C2612.0 768.0 2612.0 768.0 2620.0 764.0ZM1824.0 566.0C1826.2 564.9 1829.8 564.0 1832.0 564.0C1834.2 564.0 1837.8 563.1 1840.0 562.0C1843.6 560.2 1845.9 560.0 1866.3 560.0C1888.6 560.0 1888.6 560.0 1894.0 556.0C1899.3 552.1 1899.5 552.0 1908.0 552.0C1916.5 552.0 1916.7 551.9 1922.0 548.0C1926.5 544.7 1928.1 544.0 1932.0 544.0C1935.9 544.0 1937.5 543.3 1942.0 540.0C1944.9 537.8 1947.6 536.0 1948.0 536.0C1948.4 536.0 1951.1 534.2 1954.0 532.0C1957.2 529.6 1960.5 528.0 1962.1 528.0C1964.1 528.0 1965.7 526.9 1968.0 524.0C1970.2 521.2 1971.9 520.0 1973.7 520.0C1977.5 520.0 2002.6 495.3 2017.5 476.9C2024.8 467.9 2040.0 437.6 2040.0 432.0C2040.0 429.3 2041.3 425.4 2044.0 420.0C2046.7 414.6 2048.0 410.7 2048.0 408.0C2048.0 405.7 2048.9 402.2 2050.0 400.0C2051.7 396.7 2052.0 394.1 2052.0 384.0C2052.0 373.9 2052.3 371.3 2054.0 368.0C2055.9 364.4 2056.0 362.1 2056.0 336.0C2056.0 309.9 2055.9 307.6 2054.0 304.0C2052.9 301.8 2052.0 298.2 2052.0 296.0C2052.0 293.8 2051.1 290.2 2050.0 288.0C2048.5 285.0 2048.0 282.1 2048.0 276.0C2048.0 268.6 2047.7 267.3 2044.0 260.0C2041.2 254.4 2040.0 250.8 2040.0 247.7C2040.0 244.2 2039.2 242.3 2036.0 238.0C2033.8 235.1 2032.0 231.6 2032.0 230.3C2032.0 226.4 2023.4 210.4 2020.0 208.0C2018.1 206.6 2015.3 202.5 2012.4 196.8C2007.0 186.0 1966.5 144.0 1961.6 144.0C1959.9 144.0 1956.1 141.4 1950.0 136.0C1943.1 130.0 1940.2 128.0 1938.0 128.0C1935.9 128.0 1934.4 127.0 1932.0 124.0C1929.7 121.1 1928.1 120.0 1926.1 120.0C1924.5 120.0 1921.2 118.4 1918.0 116.0C1913.5 112.7 1911.9 112.0 1908.0 112.0C1904.1 112.0 1902.5 111.3 1898.0 108.0C1893.1 104.3 1892.1 104.0 1886.3 104.0C1880.9 104.0 1878.8 103.4 1872.0 100.0C1864.0 96.0 1864.0 96.0 1850.0 96.0C1836.0 96.0 1836.0 96.0 1828.0 92.0C1815.5 85.7 1704.5 85.7 1692.0 92.0C1684.0 96.0 1684.0 96.0 1663.9 96.0C1646.5 96.0 1643.4 96.2 1641.8 97.7C1640.1 99.2 1640.0 107.3 1640.0 315.7L1640.0 532.2L1645.9 538.1C1651.8 544.0 1651.8 544.0 1668.2 544.0C1684.6 544.0 1684.6 544.0 1690.0 548.0C1695.4 552.0 1695.4 552.0 1707.7 552.0C1720.0 552.0 1720.0 552.0 1728.0 556.0C1736.0 560.0 1736.0 560.0 1756.0 560.0C1774.1 560.0 1776.5 560.2 1780.0 562.0C1783.0 563.5 1786.0 564.0 1792.2 564.0C1798.4 564.1 1801.4 564.6 1804.0 566.0C1808.9 568.7 1818.8 568.7 1824.0 566.0ZM1144.0 244.0C1140.8 240.0 1140.8 240.0 1132.1 240.0C1121.6 240.0 1120.0 238.9 1120.0 231.8C1120.0 227.6 1119.6 226.9 1116.0 224.0C1112.4 221.2 1112.0 220.4 1112.0 216.4C1112.0 213.9 1111.1 210.2 1110.0 208.0C1108.3 204.7 1108.0 202.1 1108.0 192.0C1108.0 181.9 1108.3 179.3 1110.0 176.0C1111.6 172.8 1112.0 170.1 1112.0 161.7C1112.0 151.4 1112.0 151.4 1116.0 146.0C1119.3 141.5 1120.0 139.9 1120.0 135.9C1120.0 131.6 1120.3 130.9 1124.0 128.0C1126.9 125.7 1128.0 124.1 1128.0 122.1C1128.0 119.1 1133.2 111.2 1140.0 104.0C1144.0 99.7 1153.6 87.8 1157.3 82.6C1158.5 80.8 1160.0 80.0 1162.0 80.0C1164.1 80.0 1165.6 79.1 1167.2 76.9C1169.3 74.0 1175.4 69.4 1183.3 64.6C1185.1 63.5 1188.5 61.1 1190.9 59.3C1194.4 56.6 1196.2 56.0 1200.1 56.0C1204.4 56.0 1205.1 55.7 1208.0 52.0C1210.9 48.3 1211.6 48.0 1215.9 48.0C1219.9 48.0 1221.5 47.3 1226.0 44.0C1231.0 40.3 1231.8 40.0 1238.0 40.0C1244.2 40.0 1245.0 39.7 1250.0 36.0C1255.4 32.0 1255.4 32.0 1271.7 32.0C1286.1 32.0 1288.6 31.8 1292.0 30.0C1297.3 27.3 1306.7 27.3 1312.0 30.0C1315.0 31.5 1317.9 32.0 1324.3 32.0C1334.2 32.0 1333.9 31.8 1339.9 43.7C1344.9 53.8 1346.0 72.2 1342.0 80.0C1340.9 82.2 1340.0 85.8 1340.0 88.0C1340.0 90.2 1339.1 93.8 1338.0 96.0C1336.9 98.2 1336.0 101.7 1336.0 104.0C1336.0 106.9 1334.4 111.3 1330.0 120.0C1325.6 128.7 1324.0 133.1 1324.0 136.0C1324.0 141.3 1320.1 148.9 1315.6 152.4C1313.0 154.3 1312.0 155.9 1312.0 157.8C1312.0 162.4 1305.6 170.0 1282.3 193.6C1265.9 210.2 1259.5 216.0 1257.7 216.0C1256.4 216.0 1252.9 217.8 1250.0 220.0C1246.9 222.3 1243.5 224.0 1242.0 224.0C1240.5 224.0 1237.1 225.7 1234.0 228.0C1229.0 231.7 1228.2 232.0 1221.9 232.0C1215.2 232.0 1215.1 232.0 1212.0 236.0C1208.8 240.0 1208.8 240.0 1196.4 240.0C1185.9 240.0 1183.3 240.3 1180.0 242.0C1177.4 243.4 1174.1 244.0 1170.0 244.0C1165.9 244.0 1162.6 244.6 1160.0 246.0C1153.3 249.4 1147.8 248.8 1144.0 244.0Z"/></symbol>
+</svg>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#inicio" aria-label="GIRA — início"><svg class="logo" viewBox="0 0 3288 992"><use href="#gira"/></svg></a>
+    <nav class="nav" aria-label="Principal">
+      <a href="#produtos">Produtos</a>
+      <a href="#a-gira">A GIRA</a>
+      <a href="#profissionais">Para profissionais</a>
+      <a href="#blog">Blog</a>
+    </nav>
+    <div class="top-actions">
+      <a class="btn btn-primary btn-sub" href="#produtos" data-sub>Assinar</a>
+      <button class="cart-btn" id="cartBtn" aria-label="Abrir sacola">
+        <svg viewBox="0 0 24 24"><path d="M5 8h14l-1.2 11.2a1 1 0 0 1-1 .8H7.2a1 1 0 0 1-1-.8z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg>
+        <span class="cart-count" id="cartCount">0</span>
+      </button>
+      <button class="menu-btn" id="menuBtn" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<div class="mnav" id="mnav" hidden>
+  <div class="mnav-head">
+    <svg class="logo" viewBox="0 0 3288 992"><use href="#gira"/></svg>
+    <button class="x-btn" id="menuClose" aria-label="Fechar menu">×</button>
+  </div>
+  <a href="#produtos">Produtos</a>
+  <a href="#a-gira">A GIRA</a>
+  <a href="#profissionais">Para profissionais</a>
+  <a href="#blog">Blog</a>
+  <a class="btn btn-light" href="#produtos" data-sub>Assinar a GIRA</a>
+</div>
+
+<main id="inicio">
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-copy">
+        <span class="eyebrow">Brownie de Cacau · a primeira barra</span>
+        <h1>Gostoso<em>por inteiro.</em></h1>
+        <p class="lede">Uma pausa que dá gosto. Nossa primeira barra combina sabor de cacau, textura pensada para dar prazer e ingredientes escolhidos com cuidado.</p>
+        <div class="hero-ctas">
+          <a class="btn btn-primary" href="#produtos">Quero experimentar <span class="arr">→</span></a>
+          <a class="btn btn-ghost" href="#a-gira">Conhecer a GIRA</a>
+        </div>
+        <div class="specs" aria-label="Destaques da barra">
+          <div class="spec"><b>10 g</b><span>proteína</span></div>
+          <div class="spec"><b>11 g</b><span>fibra</span></div>
+          <div class="spec"><b>50 g</b><span>a barra</span></div>
+        </div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="arch">
+          <svg class="logo arch-logo" viewBox="0 0 3288 992"><use href="#gira"/></svg>
+        </div>
+        <svg class="ring" viewBox="0 0 500 500">
+          <defs><path id="circ" d="M250,250 m-232,0 a232,232 0 1,1 464,0 a232,232 0 1,1 -464,0"/></defs>
+          <text><textPath href="#circ">Gostoso por inteiro · Gostoso por inteiro · Gostoso por inteiro · Gostoso por inteiro · </textPath></text>
+        </svg>
+        <img class="hero-bar" src="assets/bar-teal.webp" alt="" width="1087" height="555">
+        <div class="stamp"><span><b>novo</b>sabor<br>cacau</span></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span>macia</span><span>densa como brownie</span><span>cacau na frente</span><span>fibra que importa</span><span>proteína na medida</span><span>cabe na bolsa</span><span>dá vontade de repetir</span>
+      <span>macia</span><span>densa como brownie</span><span>cacau na frente</span><span>fibra que importa</span><span>proteína na medida</span><span>cabe na bolsa</span><span>dá vontade de repetir</span>
+    </div>
+  </div>
+
+  <!-- A MORDIDA -->
+  <section class="bite" id="mordida" aria-labelledby="bite-h">
+    <div class="bite-track" id="biteTrack">
+      <div class="bite-sticky">
+        <div class="wrap">
+          <div class="stage" id="stage" aria-hidden="true">
+            <canvas id="brownie" width="900" height="460"></canvas>
+            <img class="half l" src="assets/bar-teal.webp" alt="">
+            <img class="half r" src="assets/bar-teal.webp" alt="">
+          </div>
+          <div class="bite-copy">
+            <span class="eyebrow">A mordida vem primeiro</span>
+            <h2 id="bite-h">Chocolate que dá vontade de repetir.</h2>
+            <ul class="senses" id="senses">
+              <li><i></i><b>Macia do começo ao fim</b><small>Textura que não resseca no caminho entre a prateleira e você.</small></li>
+              <li><i></i><b>Densa como um brownie</b><small>Mordida firme, que pede a próxima. Nada de barra quebradiça.</small></li>
+              <li><i></i><b>Cacau na frente</b><small>O sabor vem primeiro. O resto da história continua depois.</small></li>
+            </ul>
+            <span class="hint">role para abrir</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPOSIÇÃO -->
+  <section class="section" aria-labelledby="comp-h">
+    <div class="wrap">
+      <div class="comp-head">
+        <div style="display:flex;flex-direction:column;gap:18px">
+          <span class="eyebrow">O que tem dentro</span>
+          <h2 id="comp-h">Dá para pensar na saúde e continuar pensando no chocolate.</h2>
+        </div>
+        <p class="lede">Complexidade no laboratório, simplicidade na sua mão. Equilibramos fibra e proteína sem sacrificar o que importa: a vontade de comer de novo.</p>
+      </div>
+      <div class="numbers">
+        <div class="num"><span class="big">11<sup>g</sup></span><span class="lbl">de fibra</span><p>A fibra é a protagonista silenciosa da barra. Ajuda a pausa a render até a próxima refeição.</p></div>
+        <div class="num"><span class="big">10<sup>g</sup></span><span class="lbl">de proteína</span><p>Equilibrada, sem corrida por recorde. A textura nunca piora para bater um número.</p></div>
+        <div class="num"><span class="big" style="font-size:clamp(3rem,6vw,5rem);line-height:1">Lista<br>curta</span><span class="lbl">ingredientes que você reconhece</span>
+          <div class="chips"><span class="chip">Cacau</span><span class="chip">Fibras vegetais</span><span class="chip">Proteína vegetal</span><span class="chip">Ingrediente circular</span></div>
+        </div>
+      </div>
+
+      <div class="vs">
+        <div style="display:flex;flex-direction:column;gap:16px">
+          <span class="eyebrow">Lado a lado</span>
+          <h3 style="font-family:var(--display);font-size:clamp(1.8rem,3vw,2.6rem);line-height:1.05">Familiar na categoria. Diferente na mordida.</h3>
+          <p class="lede" style="font-size:1rem">Você já sabe o que é uma barrinha. A GIRA só escolheu outras prioridades.</p>
+        </div>
+        <div>
+          <div class="vs-table-wrap">
+            <table>
+              <thead><tr><th scope="col"><span class="sr">Critério</span></th><th scope="col" class="us">GIRA</th><th scope="col">Barra típica da categoria</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">Textura</th><td class="us">Macia e densa</td><td class="them">Muitas vezes seca e dura</td></tr>
+                <tr><th scope="row">Proteína</th><td class="us">Na medida, junto com fibra</td><td class="them">Corrida por mais gramas</td></tr>
+                <tr><th scope="row">Ingredientes</th><td class="us">Lista curta e legível</td><td class="them">Lista longa, letras miúdas</td></tr>
+                <tr><th scope="row">Embalagem</th><td class="us">Limpa, sem gritar</td><td class="them">Selos e exclamações</td></tr>
+                <tr><th scope="row">Origem</th><td class="us">Aproveita ingrediente de cadeia circular</td><td class="them">Matéria-prima convencional</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="footnote">Valores por barra de 50 g, ilustrativos. A formulação final e a tabela nutricional estão em desenvolvimento.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OCASIÕES -->
+  <section class="occ" aria-labelledby="occ-h">
+    <div class="wrap occ-head">
+      <div>
+        <span class="eyebrow">Onde ela cabe</span>
+        <h2 id="occ-h">Aquela pausa boa entre uma coisa e outra.</h2>
+      </div>
+      <div class="arrows"><button id="prev" aria-label="Ocasião anterior">←</button><button id="next" aria-label="Próxima ocasião">→</button></div>
+    </div>
+    <div class="rail" id="rail" tabindex="0" aria-label="Ocasiões de consumo, arraste para o lado">
+      <article class="occ-card"><span class="tag">Fome da tarde</span><span class="when">15h40</span><img src="assets/bar-teal.webp" alt=""><div><h3>Uma pausa que valha a pena.</h3><p>Entre uma reunião e outra, um respiro com gosto de cacau.</p></div></article>
+      <article class="occ-card"><span class="tag">Na rotina</span><span class="when">Bolsa, mochila, carro.</span><img src="assets/bar-plain.webp" alt=""><div><h3>Algo bom e confiável por perto.</h3><p>Pensada para ir junto. Sem cobertura que derrete no caminho.</p></div></article>
+      <article class="occ-card"><span class="tag">Ao ar livre</span><span class="when">Trilha, mar, rocha.</span><img src="assets/bar-teal.webp" alt=""><div><h3>Para quem gosta de estar lá fora.</h3><p>Macia até no fim da trilha. Para quem cuida do lugar onde se diverte.</p></div></article>
+      <article class="occ-card"><span class="tag">Depois do movimento</span><span class="when">Yoga, pilates, remo.</span><img src="assets/bar-cacau.webp" alt=""><div><h3>Uma recompensa que cabe no dia.</h3><p>Sem discurso de performance. Só o prazer de ter se mexido.</p></div></article>
+      <article class="occ-card"><span class="tag">Vontade de doce</span><span class="when">Agora.</span><img src="assets/bar-plain.webp" alt=""><div><h3>Sabor sem abrir mão do cuidado.</h3><p>Acontece. A gente entende.</p></div></article>
+    </div>
+  </section>
+
+  <!-- COMPRAR -->
+  <section class="section" id="produtos" aria-labelledby="shop-h">
+    <div class="wrap">
+      <div class="shop-grid">
+        <div class="gallery">
+          <div class="g-main"><img id="gMain" src="assets/bar-teal.webp" alt="Barra GIRA Brownie de Cacau, embalagem off-white com laterais azul-petróleo"></div>
+          <div class="thumbs" id="thumbs">
+            <button aria-pressed="true" data-src="assets/bar-teal.webp" data-alt="Barra GIRA Brownie de Cacau, embalagem off-white com laterais azul-petróleo"><img src="assets/bar-teal.webp" alt="Embalagem petróleo"></button>
+            <button aria-pressed="false" data-src="assets/bar-cacau.webp" data-alt="Barra GIRA com laterais na cor cacau"><img src="assets/bar-cacau.webp" alt="Embalagem cacau"></button>
+            <button aria-pressed="false" data-src="assets/display.webp" data-alt="Display da GIRA com 12 barras"><img src="assets/display.webp" alt="Caixa com 12"></button>
+            <button aria-pressed="false" data-src="assets/mesa.webp" data-alt="Duas barras GIRA sobre uma mesa de madeira" data-cover><img class="cover" src="assets/mesa.webp" alt="Barras na mesa"></button>
+            <button aria-pressed="false" data-src="assets/display-b.webp" data-alt="Display GIRA visto de lado"><img src="assets/display-b.webp" alt="Display de lado"></button>
+          </div>
+        </div>
+
+        <form class="pdp" id="buyForm">
+          <span class="sub">Barra de proteína natural · 50 g</span>
+          <h2 id="shop-h">Brownie de Cacau</h2>
+          <p class="lede" style="font-size:1.03rem">Macia, densa e com cacau na frente. Fibra relevante, proteína equilibrada e uma origem circular que acrescenta significado a cada mordida.</p>
+
+          <fieldset class="opts">
+            <legend>Escolha como quer a sua</legend>
+            <label class="opt"><input type="radio" name="plan" value="conhecer" id="plan-conhecer"><span class="dot"></span><span class="opt-name">Caixa para conhecer</span><span class="opt-price" id="p-conhecer"></span><span class="opt-desc">4 barras. A primeira vez com a GIRA.</span></label>
+            <label class="opt"><input type="radio" name="plan" value="perto" id="plan-perto" checked><span class="dot"></span><span class="opt-name">Caixa para ter por perto</span><span class="opt-price" id="p-perto"></span><span class="opt-desc">12 barras no display. Para casa, escritório ou mochila.</span></label>
+            <label class="opt"><input type="radio" name="plan" value="mes" id="plan-mes"><span class="dot"></span><span class="opt-name">GIRA todo mês <span class="badge">−15%</span></span><span class="opt-price" id="p-mes"></span><span class="opt-desc">Assinatura com frete grátis. Pause ou cancele quando quiser.</span></label>
+          </fieldset>
+
+          <div class="subcfg" id="subcfg" hidden>
+            <label>Barras por entrega
+              <div class="seg" id="segQty"><button type="button" data-v="8" aria-pressed="false">8</button><button type="button" data-v="12" aria-pressed="true">12</button><button type="button" data-v="24" aria-pressed="false">24</button></div>
+            </label>
+            <label>Frequência
+              <div class="seg" id="segFreq"><button type="button" data-v="mensal" aria-pressed="true">Todo mês</button><button type="button" data-v="quinzenal" aria-pressed="false">A cada 15 dias</button></div>
+            </label>
+          </div>
+
+          <div class="buy-row">
+            <div class="qty" id="qtyBox"><button type="button" id="qMinus" aria-label="Diminuir quantidade">−</button><output id="qVal" aria-live="polite">1</output><button type="button" id="qPlus" aria-label="Aumentar quantidade">+</button></div>
+            <button class="btn btn-primary" type="submit" id="addBtn">Adicionar à sacola · <span id="addPrice"></span></button>
+          </div>
+          <ul class="perks"><li>Frete grátis acima de R$ 99</li><li>Envio em até 2 dias úteis</li><li>Embalagem reciclável</li></ul>
+        </form>
+      </div>
+
+      <div class="next">
+        <img src="assets/sabores.webp" alt="Caixas GIRA empilhadas com os sabores em estudo">
+        <div>
+          <span class="eyebrow">Na cozinha de testes</span>
+          <h2 style="margin-top:14px">Próximos sabores.</h2>
+          <ul class="flv">
+            <li>Chocolatíssimo <span>em estudo</span></li>
+            <li>Caramelo com sal <span>em estudo</span></li>
+            <li>Mocha <span>em estudo</span></li>
+            <li>Morango <span>em estudo</span></li>
+            <li>Cookie Dough <span>em estudo</span></li>
+          </ul>
+          <button class="btn btn-ghost notify" type="button" id="notify" aria-pressed="false">Quero saber quando chegar</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOCA A BOCA -->
+  <section class="wom" aria-labelledby="wom-h">
+    <div class="wrap">
+      <span class="eyebrow" id="wom-h">O boca a boca que a gente quer merecer</span>
+      <blockquote>“Experimentei uma barra gostosa, macia e bem pensada. <em>E ainda descobri</em> que eles aproveitam um ingrediente de uma cadeia circular.”</blockquote>
+      <div class="slots">
+        <div class="slot"><span class="stars">○ ○ ○ ○ ○</span><p>As primeiras impressões do Kit de Descoberta entram aqui.</p><small>Espaço reservado · depoimento real</small></div>
+        <div class="slot"><span class="stars">○ ○ ○ ○ ○</span><p>Sabor, textura, a pausa em que ela coube. Do jeito que a pessoa contar.</p><small>Espaço reservado · depoimento real</small></div>
+        <div class="slot cta"><p>Provou o Kit de Descoberta? Conta pra gente o que achou.</p><a class="btn btn-light" href="#fim" style="align-self:flex-start;min-height:44px">Deixar minha opinião</a><small>Leva menos de 2 minutos</small></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- A GIRA -->
+  <section class="about" id="a-gira" aria-labelledby="about-h">
+    <div class="wrap">
+      <div class="about-grid">
+        <div>
+          <span class="eyebrow">A GIRA</span>
+          <h2 id="about-h" style="margin-top:16px">Começamos por uma barra. A ideia vai além dela.</h2>
+          <div class="manifesto">
+            <p>A gente acredita que comer bem precisa dar gosto. Que prazer e cuidado cabem na mesma mordida. Que ciência pode fazer a diferença sem precisar virar aula.</p>
+            <p>E que um ingrediente pode ganhar uma nova vida quando alguém enxerga valor onde antes havia pouca atenção. A GIRA é uma plataforma de <strong>alimentos circulares</strong>: começamos pelos snacks. Não terminamos neles.</p>
+          </div>
+        </div>
+        <div class="cycle" aria-label="Como a GIRA funciona, em quatro etapas que se repetem">
+          <svg viewBox="0 0 520 520" aria-hidden="true">
+            <circle cx="260" cy="260" r="190" fill="none" stroke="rgba(242,239,232,.22)" stroke-width="1.2"/>
+            <g class="cycle-spin">
+              <circle cx="260" cy="260" r="190" fill="none" stroke="#AED35B" stroke-width="2.5" stroke-dasharray="1 14" stroke-linecap="round"/>
+              <path d="M260 70 A190 190 0 0 1 395 126" fill="none" stroke="#AED35B" stroke-width="3" stroke-linecap="round"/>
+              <path d="M391 120 l8 8 l-11 2" fill="none" stroke="#AED35B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+            </g>
+            <circle cx="260" cy="70" r="9" fill="#F2EFE8"/><circle cx="450" cy="260" r="9" fill="#F2EFE8"/>
+            <circle cx="260" cy="450" r="9" fill="#F2EFE8"/><circle cx="70" cy="260" r="9" fill="#F2EFE8"/>
+          </svg>
+          <div class="cycle-center"><svg class="logo" viewBox="0 0 3288 992"><use href="#gira"/></svg></div>
+          <div class="node-lbl n1"><b>Enxergar</b>valor que já existe na indústria de alimentos</div>
+          <div class="node-lbl n2"><b>Transformar</b>em ingrediente seguro e estável</div>
+          <div class="node-lbl n3"><b>Criar</b>alimentos que dão vontade</div>
+          <div class="node-lbl n4"><b>Recomeçar</b>com novos ingredientes e categorias</div>
+        </div>
+        <ol class="cycle-list" aria-hidden="true">
+          <li><b>Enxergar</b>valor que já existe na indústria de alimentos</li>
+          <li><b>Transformar</b>em ingrediente seguro e estável</li>
+          <li><b>Criar</b>alimentos que dão vontade</li>
+          <li><b>Recomeçar</b>com novos ingredientes e categorias</li>
+        </ol>
+      </div>
+      <div class="pillars">
+        <div class="pillar"><span class="k">Primeiro</span><h3>Sabor</h3><p>Comer bem deve ser, antes de tudo, prazeroso.</p></div>
+        <div class="pillar"><span class="k">Junto</span><h3>Saúde com equilíbrio</h3><p>Ingredientes reconhecíveis, fórmula simples, sem modismos.</p></div>
+        <div class="pillar"><span class="k">Na prática</span><h3>Circularidade</h3><p>Aproveitar melhor os recursos e transformar potencial em valor.</p></div>
+        <div class="pillar"><span class="k">Sempre</span><h3>Ciência e transparência</h3><p>Inovar com responsabilidade. Comunicar com verdade.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROFISSIONAIS -->
+  <section class="section" id="profissionais" aria-labelledby="pro-h">
+    <div class="wrap">
+      <div style="display:flex;flex-direction:column;gap:16px;max-width:720px">
+        <span class="eyebrow">Para profissionais</span>
+        <h2 id="pro-h">Vamos fazer a GIRA chegar mais longe juntos.</h2>
+      </div>
+      <div class="pros-grid">
+        <article class="pro">
+          <div class="pro-img"><img src="assets/display-cena.webp" alt="Display GIRA com barras sobre balcão"></div>
+          <div class="pro-body"><span class="k">Revenda e varejo</span><h3>Um pequeno outdoor no seu balcão.</h3><p>Display com 12 barras, reconhecível de longe. Condições para mercados, empórios, cafés e academias.</p><button class="btn btn-ghost" type="button" data-contact="Revenda e varejo">Quero revender</button></div>
+        </article>
+        <article class="pro">
+          <div class="pro-img contain"><img src="assets/bar-cacau.webp" alt="Barra GIRA"></div>
+          <div class="pro-body"><span class="k">Nutricionistas e prescritores</span><h3>Uma opção para indicar com tranquilidade.</h3><p>Ficha técnica, composição e amostras para conhecer a barra antes de recomendar.</p><button class="btn btn-ghost" type="button" data-contact="Nutricionistas e prescritores">Pedir material técnico</button></div>
+        </article>
+        <article class="pro">
+          <div class="pro-img"><img src="assets/mesa.webp" alt="Duas barras GIRA na mesa"></div>
+          <div class="pro-body"><span class="k">Criadores e comunidades</span><h3>Gente boa em movimento.</h3><p>Trilha, surf, escalada, yoga. Se a sua comunidade gosta de estar lá fora, a gente quer conversar.</p><button class="btn btn-ghost" type="button" data-contact="Criadores e comunidades">Falar com a GIRA</button></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOG -->
+  <section class="section blog" id="blog" aria-labelledby="blog-h">
+    <div class="wrap">
+      <div class="blog-head">
+        <div style="display:flex;flex-direction:column;gap:16px"><span class="eyebrow">Blog</span><h2 id="blog-h">Conversa boa sobre comida.</h2></div>
+      </div>
+      <div class="posts">
+        <a class="post" href="#blog"><span class="meta"><span>Composição</span><span>· 4 min</span></span><h3>Fibra: a parte do rótulo que pouca gente lê.</h3><p>Por que a gente decidiu olhar para a fibra com o mesmo carinho que o resto da categoria olha para a proteína.</p><span class="soon">Em breve →</span></a>
+        <a class="post" href="#blog"><span class="meta"><span>Bastidores</span><span>· 5 min</span></span><h3>Como chegamos à textura da primeira barra.</h3><p>Macia, densa e sem ressecar. O caminho até a mordida certa.</p><span class="soon">Em breve →</span></a>
+        <a class="post" href="#blog"><span class="meta"><span>Circularidade</span><span>· 3 min</span></span><h3>Alimento circular, sem complicar.</h3><p>O que significa dar nova vida a um ingrediente, explicado em poucas linhas.</p><span class="soon">Em breve →</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FECHAMENTO -->
+  <section class="close" id="fim" aria-labelledby="close-h">
+    <div class="wrap">
+      <svg class="logo giant" viewBox="0 0 3288 992" aria-hidden="true"><use href="#gira"/></svg>
+      <div class="close-inner">
+        <h2 id="close-h">Seja dos primeiros a provar.</h2>
+        <p class="lede">Novidades, sabores novos e convites para provar antes de todo mundo. Pouca mensagem, só quando valer a pena.</p>
+        <form class="lead" id="leadForm" novalidate>
+          <label for="leadEmail" class="sr">Seu e-mail</label>
+          <input id="leadEmail" type="email" placeholder="seu@email.com" autocomplete="email" required>
+          <button class="btn btn-primary" type="submit">Quero receber</button>
+        </form>
+        <p class="lead-msg" id="leadMsg" aria-live="polite"></p>
+        <a class="btn btn-ghost" href="#produtos">Ou experimente agora <span class="arr">→</span></a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div><svg class="logo" viewBox="0 0 3288 992"><use href="#gira"/></svg><p class="foot-tag">Gostoso por inteiro.</p></div>
+      <div><h4>Loja</h4><ul><li><a href="#produtos">Brownie de Cacau</a></li><li><a href="#produtos" data-sub>GIRA todo mês</a></li><li><a href="#produtos">Próximos sabores</a></li></ul></div>
+      <div><h4>A GIRA</h4><ul><li><a href="#a-gira">Quem somos</a></li><li><a href="#a-gira">Alimentos circulares</a></li><li><a href="#blog">Blog</a></li></ul></div>
+      <div><h4>Contato</h4><ul><li><a href="#profissionais">Para profissionais</a></li><li><a href="#fim">Novidades</a></li><li><span style="color:var(--band-muted)">ola@gira.com.br</span></li></ul></div>
+    </div>
+    <div class="legal"><span>Protótipo de apresentação. Embalagens, valores nutricionais, preços e sabores são ilustrativos e não representam o produto final.</span><span>© 2026 GIRA</span></div>
+  </div>
+</footer>
+
+<!-- Sacola -->
+<div class="scrim" id="scrim" hidden></div>
+<aside class="drawer" id="drawer" aria-label="Sacola" aria-hidden="true">
+  <div class="d-head"><h3>Sua sacola</h3><button class="x-btn" id="drawerClose" aria-label="Fechar sacola">×</button></div>
+  <div class="ship" id="ship"><span id="shipTxt"></span><div class="bar"><i id="shipBar"></i></div></div>
+  <div class="items" id="items"></div>
+  <div class="d-foot" id="dFoot">
+    <div class="tot"><span>Subtotal</span><b id="subtotal">R$ 0,00</b></div>
+    <button class="btn btn-primary" id="checkoutBtn">Finalizar compra <span class="arr">→</span></button>
+    <button class="btn btn-ghost" id="keepBtn">Continuar escolhendo</button>
+  </div>
+</aside>
+
+<!-- Checkout -->
+<div class="modal" id="modal" hidden role="dialog" aria-modal="true" aria-labelledby="ck-title">
+  <div class="sheet" id="sheet"></div>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+(function(){
+  const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
+  const brl=v=>'R$ '+v.toFixed(2).replace('.',',').replace(/\B(?=(\d{3})+(?!\d))/g,'.');
+  const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---------- Plans ---------- */
+  const PLANS={
+    conhecer:{name:'Caixa para conhecer',img:'assets/bar-teal.webp',price:()=>39.60,detail:()=>'4 barras · Brownie de Cacau',per:'R$ 9,90 por barra'},
+    perto:{name:'Caixa para ter por perto',img:'assets/display.webp',price:()=>106.80,detail:()=>'12 barras · Brownie de Cacau',per:'R$ 8,90 por barra'},
+    mes:{name:'GIRA todo mês',img:'assets/display-b.webp',sub:true,
+      price:()=>{const u=sub.qty>=24?7.40:7.57;return +(sub.qty*u).toFixed(2)},
+      detail:()=>sub.qty+' barras · '+(sub.freq==='mensal'?'todo mês':'a cada 15 dias'),per:'frete grátis'}
+  };
+  const sub={qty:12,freq:'mensal'};
+  let qty=1;
+  function plan(){return $('input[name=plan]:checked').value}
+  function refreshPrices(){
+    $('#p-conhecer').innerHTML=brl(PLANS.conhecer.price())+'<small>'+PLANS.conhecer.per+'</small>';
+    $('#p-perto').innerHTML=brl(PLANS.perto.price())+'<small>'+PLANS.perto.per+'</small>';
+    $('#p-mes').innerHTML=brl(PLANS.mes.price())+'<small>por entrega</small>';
+    const p=PLANS[plan()];
+    $('#subcfg').hidden=!p.sub;
+    $('#addPrice').textContent=brl(p.price()*qty);
+    $('#qVal').textContent=qty;
+  }
+  $$('input[name=plan]').forEach(r=>r.addEventListener('change',refreshPrices));
+  function seg(id,key,num){
+    $$(id+' button').forEach(b=>b.addEventListener('click',()=>{
+      $$(id+' button').forEach(x=>x.setAttribute('aria-pressed','false'));
+      b.setAttribute('aria-pressed','true');
+      sub[key]=num?+b.dataset.v:b.dataset.v;refreshPrices();
+    }));
+  }
+  seg('#segQty','qty',true);seg('#segFreq','freq',false);
+  $('#qMinus').onclick=()=>{qty=Math.max(1,qty-1);refreshPrices()};
+  $('#qPlus').onclick=()=>{qty=Math.min(20,qty+1);refreshPrices()};
+  $$('[data-sub]').forEach(a=>a.addEventListener('click',()=>{$('#plan-mes').checked=true;refreshPrices();closeMenu()}));
+
+  /* gallery */
+  $$('#thumbs button').forEach(b=>b.addEventListener('click',()=>{
+    $$('#thumbs button').forEach(x=>x.setAttribute('aria-pressed','false'));b.setAttribute('aria-pressed','true');
+    const m=$('#gMain');m.classList.add('swap');
+    setTimeout(()=>{m.src=b.dataset.src;m.alt=b.dataset.alt;m.classList.toggle('cover',b.hasAttribute('data-cover'));m.classList.remove('swap')},reduce?0:220);
+  }));
+
+  /* ---------- Cart ---------- */
+  let cart=[];
+  try{cart=JSON.parse(localStorage.getItem('gira-cart')||'[]')}catch(e){cart=[]}
+  const save=()=>{try{localStorage.setItem('gira-cart',JSON.stringify(cart))}catch(e){}};
+  const FREE=99;
+  function total(){return cart.reduce((s,i)=>s+i.price*i.qty,0)}
+  function renderCart(){
+    const n=cart.reduce((s,i)=>s+i.qty,0);const c=$('#cartCount');
+    c.textContent=n;c.classList.add('bump');setTimeout(()=>c.classList.remove('bump'),300);
+    const t=total(),hasSub=cart.some(i=>i.sub);
+    const left=FREE-t;
+    $('#shipTxt').innerHTML=(hasSub||left<=0)?'<b>Frete grátis</b> garantido.':'Faltam <b>'+brl(left)+'</b> para o frete grátis.';
+    $('#shipBar').style.width=(hasSub?100:Math.min(100,t/FREE*100))+'%';
+    $('#subtotal').textContent=brl(t);
+    const box=$('#items');
+    if(!cart.length){
+      box.innerHTML='<div class="empty"><svg class="logo" viewBox="0 0 3288 992"><use href="#gira"/></svg><p>Sua sacola está vazia. A primeira mordida começa com uma caixa para conhecer.</p><button class="btn btn-primary" id="emptyGo">Ver a barra</button></div>';
+      $('#emptyGo').onclick=()=>{closeDrawer();location.hash='produtos'};
+      $('#dFoot').hidden=true;$('#ship').hidden=true;return;
+    }
+    $('#dFoot').hidden=false;$('#ship').hidden=false;
+    box.innerHTML=cart.map((i,k)=>`<div class="item"><img src="${i.img}" alt=""><div><div class="nm">${i.name}</div><div class="dt">${i.detail}</div><div class="mini"><button aria-label="Diminuir" data-k="${k}" data-d="-1">−</button><output>${i.qty}</output><button aria-label="Aumentar" data-k="${k}" data-d="1">+</button></div></div><div class="pr">${brl(i.price*i.qty)}${i.sub?'<div class="dt">por entrega</div>':''}<button class="rm" data-rm="${k}">Remover</button></div></div>`).join('');
+    box.querySelectorAll('[data-d]').forEach(b=>b.onclick=()=>{const it=cart[+b.dataset.k];it.qty=Math.max(1,Math.min(20,it.qty+ +b.dataset.d));save();renderCart()});
+    box.querySelectorAll('[data-rm]').forEach(b=>b.onclick=()=>{cart.splice(+b.dataset.rm,1);save();renderCart()});
+  }
+  $('#buyForm').addEventListener('submit',e=>{
+    e.preventDefault();
+    const key=plan(),p=PLANS[key],detail=p.detail(),price=p.price();
+    const ex=cart.find(i=>i.key===key&&i.detail===detail);
+    if(ex)ex.qty=Math.min(20,ex.qty+qty);else cart.push({key,name:p.name,detail,price,qty,img:p.img,sub:!!p.sub});
+    save();renderCart();openDrawer();toast(p.name+' adicionada à sacola');
+  });
+  const scrim=$('#scrim'),drawer=$('#drawer');
+  function openDrawer(){scrim.hidden=false;requestAnimationFrame(()=>{scrim.classList.add('on');drawer.classList.add('on')});drawer.setAttribute('aria-hidden','false');setTimeout(()=>$('#drawerClose').focus(),300)}
+  function closeDrawer(){scrim.classList.remove('on');drawer.classList.remove('on');drawer.setAttribute('aria-hidden','true');setTimeout(()=>{if(!drawer.classList.contains('on')&&$('#modal').hidden)scrim.hidden=true},350)}
+  $('#cartBtn').onclick=openDrawer;$('#drawerClose').onclick=closeDrawer;$('#keepBtn').onclick=()=>{closeDrawer();location.hash='produtos'};
+  scrim.onclick=()=>{closeDrawer();closeModal()};
+  document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeDrawer();closeModal();closeMenu()}});
+
+  /* ---------- Checkout (simulado) ---------- */
+  const ck={step:0,nome:'Ana Souza',cep:'01310-100',end:'Av. Paulista, 1000 · ap. 52',cidade:'São Paulo · SP',pay:'pix'};
+  const modal=$('#modal'),sheet=$('#sheet');
+  function steps(){return `<ol class="steps"><li class="${ck.step>=0?'on':''}">Entrega</li><li class="${ck.step>=1?'on':''}">Pagamento</li><li class="${ck.step>=2?'on':''}">Pronto</li></ol>`}
+  function renderCk(){
+    const t=total(),hasSub=cart.some(i=>i.sub),frete=(hasSub||t>=FREE)?0:14.9;
+    if(ck.step===0){
+      sheet.innerHTML=steps()+`<h3 id="ck-title" style="font-family:var(--display);font-size:2rem">Para onde vai a sua GIRA?</h3>
+      <form id="ckForm" class="fgrid">
+        <label class="field full">Nome<input id="ck-nome" value="${ck.nome}" autocomplete="name" required></label>
+        <label class="field">CEP<input id="ck-cep" value="${ck.cep}" inputmode="numeric" required></label>
+        <label class="field">Cidade<input id="ck-cidade" value="${ck.cidade}" required></label>
+        <label class="field full">Endereço<input id="ck-end" value="${ck.end}" required></label>
+        <p class="note full" style="grid-column:1/-1">Checkout de demonstração. Os dados acima são um exemplo e nada é enviado.</p>
+        <div class="sheet-actions" style="grid-column:1/-1"><button type="button" class="btn btn-ghost" id="ckCancel">Voltar à sacola</button><button class="btn btn-primary">Ir para pagamento <span class="arr">→</span></button></div>
+      </form>`;
+      $('#ckCancel').onclick=()=>{closeModal();openDrawer()};
+      $('#ckForm').onsubmit=e=>{e.preventDefault();['nome','cep','cidade','end'].forEach(k=>ck[k]=$('#ck-'+k).value);ck.step=1;renderCk()};
+    }else if(ck.step===1){
+      sheet.innerHTML=steps()+`<h3 id="ck-title" style="font-family:var(--display);font-size:2rem">Como prefere pagar?</h3>
+      <form id="ckPay" style="display:flex;flex-direction:column;gap:18px">
+        <div class="pay">
+          <label class="opt"><input type="radio" name="pay" id="pay-pix" value="pix" ${ck.pay==='pix'?'checked':''}><span class="dot"></span><span class="opt-name">Pix</span><span class="opt-desc">Aprovação na hora</span></label>
+          <label class="opt"><input type="radio" name="pay" id="pay-card" value="cartao" ${ck.pay==='cartao'?'checked':''}><span class="dot"></span><span class="opt-name">Cartão</span><span class="opt-desc">${hasSub?'Cobrança a cada entrega':'Em até 3x sem juros'}</span></label>
+        </div>
+        <div class="summary">${cart.map(i=>`<div><span>${i.qty}× ${i.name}</span><span>${brl(i.price*i.qty)}</span></div>`).join('')}<div><span>Frete</span><span>${frete?brl(frete):'Grátis'}</span></div><div style="font-weight:600"><span>Total</span><span>${brl(t+frete)}</span></div></div>
+        <p class="note">Nenhum pagamento é processado nesta demonstração.</p>
+        <div class="sheet-actions"><button type="button" class="btn btn-ghost" id="ckBack">← Entrega</button><button class="btn btn-primary">Confirmar pedido · ${brl(t+frete)}</button></div>
+      </form>`;
+      $('#ckBack').onclick=()=>{ck.step=0;renderCk()};
+      $('#ckPay').onsubmit=e=>{e.preventDefault();ck.pay=$('input[name=pay]:checked').value;ck.order='GR-'+String(Math.floor(10000+Math.random()*89999));ck.total=t+frete;ck.hasSub=hasSub;ck.step=2;renderCk()};
+    }else{
+      const first=ck.nome.split(' ')[0];
+      sheet.innerHTML=steps()+`<div class="done"><svg class="logo spinlogo" viewBox="0 0 3288 992"><use href="#gira"/></svg>
+        <h3 id="ck-title">Obrigado, ${first}.</h3>
+        <p class="lede" style="text-align:center">Pedido <b>${ck.order}</b> confirmado. Sua GIRA sai em até 2 dias úteis para ${ck.cidade.split('·')[0].trim()}.${ck.hasSub?' A próxima entrega da assinatura já está agendada.':''}</p>
+        <div class="summary"><div><span>Total</span><span>${brl(ck.total)}</span></div><div><span>Pagamento</span><span>${ck.pay==='pix'?'Pix':'Cartão'}</span></div></div>
+        <p class="note">Pedido de demonstração. Nada foi cobrado nem enviado.</p>
+        <button class="btn btn-primary" id="ckDone">Voltar para a loja</button></div>`;
+      cart=[];save();renderCart();
+      $('#ckDone').onclick=closeModal;
+    }
+    sheet.scrollTop=0;
+  }
+  $('#checkoutBtn').onclick=()=>{ck.step=0;drawer.classList.remove('on');drawer.setAttribute('aria-hidden','true');modal.hidden=false;renderCk();setTimeout(()=>{const f=sheet.querySelector('input');f&&f.focus()},100)};
+  function closeModal(){if(modal.hidden)return;modal.hidden=true;scrim.classList.remove('on');setTimeout(()=>{if(!drawer.classList.contains('on'))scrim.hidden=true},350)}
+  modal.addEventListener('click',e=>{if(e.target===modal)closeModal()});
+
+  /* ---------- Toast ---------- */
+  let tt;function toast(m){const t=$('#toast');t.textContent=m;t.classList.add('on');clearTimeout(tt);tt=setTimeout(()=>t.classList.remove('on'),2600)}
+
+  /* ---------- Mobile menu ---------- */
+  const mnav=$('#mnav');
+  function closeMenu(){mnav.hidden=true;$('#menuBtn').setAttribute('aria-expanded','false')}
+  $('#menuBtn').onclick=()=>{mnav.hidden=false;$('#menuBtn').setAttribute('aria-expanded','true');$('#menuClose').focus()};
+  $('#menuClose').onclick=closeMenu;
+  mnav.querySelectorAll('a').forEach(a=>a.addEventListener('click',closeMenu));
+
+  /* ---------- Misc ---------- */
+  $('#notify').onclick=e=>{const b=e.currentTarget,on=b.getAttribute('aria-pressed')!=='true';b.setAttribute('aria-pressed',on);b.textContent=on?'Combinado, a gente avisa ✓':'Quero saber quando chegar';if(on)toast('Você será avisado dos próximos sabores')};
+  $$('[data-contact]').forEach(b=>b.onclick=()=>{toast('Recebemos seu interesse em '+b.dataset.contact+'. A gente volta em breve.')});
+  $('#leadForm').onsubmit=e=>{e.preventDefault();const v=$('#leadEmail').value.trim();const m=$('#leadMsg');
+    if(!/^\S+@\S+\.\S+$/.test(v)){m.textContent='Confere o e-mail? Parece que falta alguma parte.';return}
+    m.textContent='Pronto. Você está na lista de quem prova primeiro.';$('#leadEmail').value=''};
+
+  /* ---------- Occasions rail ---------- */
+  const rail=$('#rail');
+  const step=()=>rail.querySelector('.occ-card').offsetWidth+18;
+  $('#prev').onclick=()=>rail.scrollBy({left:-step(),behavior:'smooth'});
+  $('#next').onclick=()=>rail.scrollBy({left:step(),behavior:'smooth'});
+  let dn=false,sx=0,sl=0,moved=false;
+  rail.addEventListener('pointerdown',e=>{if(e.pointerType!=='mouse')return;dn=true;moved=false;sx=e.clientX;sl=rail.scrollLeft;rail.classList.add('drag')});
+  addEventListener('pointermove',e=>{if(!dn)return;const d=e.clientX-sx;if(Math.abs(d)>3)moved=true;rail.scrollLeft=sl-d});
+  addEventListener('pointerup',()=>{if(!dn)return;dn=false;rail.classList.remove('drag')});
+
+  /* ---------- Brownie (canvas) ---------- */
+  const cv=$('#brownie'),cx=cv.getContext('2d');
+  function rnd(s){return function(){s=(s*16807)%2147483647;return (s-1)/2147483646}}
+  function drawBrownie(){
+    const W=cv.width,H=cv.height,r=rnd(7);cx.clearRect(0,0,W,H);
+    const x0=40,y0=70,w=W-80,h=H-130,rad=46;
+    // bite = union of circles at top-right corner
+    const bites=[[x0+w-40,y0+28,86],[x0+w-120,y0-6,64],[x0+w+6,y0+120,70]];
+    // side (depth)
+    cx.save();
+    cx.beginPath();cx.roundRect(x0,y0+26,w,h,rad);cx.fillStyle='#2B1710';cx.fill();
+    // top surface
+    const g=cx.createLinearGradient(0,y0,0,y0+h);g.addColorStop(0,'#6A3F2C');g.addColorStop(.55,'#4E2C1E');g.addColorStop(1,'#3A2016');
+    cx.beginPath();cx.roundRect(x0,y0,w,h,rad);cx.fillStyle=g;cx.fill();
+    // crackle
+    cx.clip();
+    for(let i=0;i<46;i++){const x=x0+r()*w,y=y0+r()*h*.9;cx.beginPath();cx.moveTo(x,y);let px=x,py=y;for(let k=0;k<5;k++){px+=(r()-.5)*70;py+=(r()-.5)*26;cx.lineTo(px,py)}cx.strokeStyle='rgba(160,110,80,'+(.12+r()*.2)+')';cx.lineWidth=1+r()*2;cx.stroke()}
+    for(let i=0;i<70;i++){const x=x0+r()*w,y=y0+r()*h,s=3+r()*9;cx.beginPath();cx.ellipse(x,y,s,s*.6,r()*3,0,7);cx.fillStyle=r()>.5?'rgba(30,14,8,.55)':'rgba(140,92,64,.35)';cx.fill()}
+    // grain
+    const id=cx.getImageData(0,0,W,H),d=id.data;for(let i=0;i<d.length;i+=4){if(d[i+3]){const n=(r()-.5)*26;d[i]+=n;d[i+1]+=n*.8;d[i+2]+=n*.6}}cx.putImageData(id,0,0);
+    // gloss
+    const gl=cx.createRadialGradient(x0+w*.3,y0+h*.2,10,x0+w*.3,y0+h*.2,w*.5);gl.addColorStop(0,'rgba(255,220,190,.16)');gl.addColorStop(1,'rgba(255,220,190,0)');cx.fillStyle=gl;cx.fillRect(x0,y0,w,h);
+    cx.restore();
+    // bite: carve out, then paint the exposed crumb rim
+    cx.save();cx.globalCompositeOperation='destination-out';
+    bites.forEach(([x,y,R])=>{cx.beginPath();for(let a=0;a<=Math.PI*2+.01;a+=.12){const rr=R+Math.sin(a*9)*3.5+(r()-.5)*3;cx.lineTo(x+Math.cos(a)*rr,y+Math.sin(a)*rr)}cx.fill()});
+    cx.restore();
+    cx.save();cx.globalCompositeOperation='source-atop';
+    bites.forEach(([x,y,R])=>{for(let k=0;k<60;k++){const a=r()*Math.PI*2,rr=R+4+r()*14;cx.beginPath();cx.arc(x+Math.cos(a)*rr,y+Math.sin(a)*rr,2+r()*5,0,7);cx.fillStyle=r()>.4?'rgba(42,22,14,.9)':'rgba(120,76,52,.7)';cx.fill()}});
+    cx.restore();
+    // crumbs on the floor
+    for(let i=0;i<26;i++){const x=x0+w*.55+r()*w*.5,y=y0+h+40+r()*24,s=2+r()*6;cx.beginPath();cx.ellipse(x,y,s,s*.7,r()*3,0,7);cx.fillStyle=r()>.5?'#3A2016':'#5A3424';cx.fill()}
+  }
+  if(cx.roundRect)drawBrownie();else{cx.fillStyle='#4E2C1E';cx.fillRect(40,70,820,330)}
+
+  /* ---------- Scroll: tear the wrapper ---------- */
+  const track=$('#biteTrack'),L=$('.half.l'),R=$('.half.r'),lis=$$('#senses li');
+  function ease(t){return t<.5?2*t*t:1-Math.pow(-2*t+2,2)/2}
+  function onScroll(){
+    if(reduce){apply(1);return}
+    const rct=track.getBoundingClientRect(),span=rct.height-innerHeight;
+    const p=Math.min(1,Math.max(0,(-rct.top+innerHeight*.15)/(span*.85)));
+    apply(p);
+  }
+  function apply(p){
+    const e=ease(p);
+    L.style.transform=`translate(${-e*46}%, ${e*8}%) rotate(${-e*14}deg)`;
+    R.style.transform=`translate(${e*46}%, ${-e*6}%) rotate(${e*11}deg)`;
+    L.style.opacity=R.style.opacity=String(1-Math.min(1,Math.max(0,(e-.45)/.4)));
+    cv.style.setProperty('--bs',(.86+e*.14).toFixed(3));
+    lis.forEach((li,i)=>li.style.setProperty('--o',p>=(i+1)*.24?1:.45));
+  }
+  let tick=false;addEventListener('scroll',()=>{if(!tick){tick=true;requestAnimationFrame(()=>{onScroll();tick=false})}},{passive:true});
+  addEventListener('resize',onScroll);onScroll();
+
+  refreshPrices();renderCart();
+})();
+</script>
+
+</body>
+</html>
