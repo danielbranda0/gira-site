@@ -126,18 +126,17 @@ p{margin:0}
 .spec:last-child{border:0}
 .spec b{font-family:var(--serif);font-weight:400;font-size:1.65rem;color:var(--brand);line-height:1;font-variant-numeric:tabular-nums}
 .spec span{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-top:6px}
-.hero-art{position:relative;aspect-ratio:1/1;max-width:100%;display:grid;place-items:center;min-width:0}
-.arch{position:absolute;inset:6% 12% 0;border-radius:999px 999px 28px 28px;background:var(--band);overflow:hidden}
+.hero-art{position:relative;aspect-ratio:1/1;width:100%;max-width:100%;min-width:0}
+.arch{position:absolute;left:21%;right:21%;top:9%;bottom:16%;border-radius:999px 999px 24px 24px;background:var(--band);overflow:hidden}
 .arch::after{content:"";position:absolute;left:0;right:0;bottom:0;height:5px;background:linear-gradient(90deg,var(--lima),#E9B44C 60%,#E07B39)}
 .ring{position:absolute;inset:0;width:100%;height:100%;animation:spin 38s linear infinite}
 .ring text{font-family:var(--sans);font-size:15.5px;letter-spacing:.42em;font-weight:500;fill:var(--brand);text-transform:uppercase}
 @keyframes spin{to{transform:rotate(360deg)}}
-.hero-bar{position:relative;width:80%;margin-top:30%;transform:rotate(-9deg);filter:drop-shadow(0 34px 34px rgba(8,40,44,.35));animation:float 6s ease-in-out infinite}
-@keyframes float{50%{transform:rotate(-7deg) translateY(-12px)}}
-.hero-art{align-items:start}
-.arch-logo{position:absolute;top:13%;left:50%;transform:translateX(-50%);width:44%;color:var(--band-fg);opacity:.95}
-.arch-tag{position:absolute;top:31%;left:0;right:0;text-align:center;color:var(--band-fg);font-family:var(--serif);font-style:italic;font-size:clamp(1rem,1.6vw,1.25rem)}
-.stamp{position:absolute;right:2%;bottom:6%;width:92px;height:92px;border-radius:50%;background:var(--lima);color:#15292B;display:grid;place-items:center;text-align:center;font-size:.68rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;line-height:1.25;transform:rotate(12deg);box-shadow:var(--shadow)}
+.hero-bar{position:absolute;left:4%;bottom:11%;width:92%;height:auto;transform:rotate(-8deg);filter:drop-shadow(0 34px 34px rgba(8,40,44,.35));animation:float 6s ease-in-out infinite}
+@keyframes float{50%{transform:rotate(-6deg) translateY(-10px)}}
+.arch-logo{position:absolute;top:15%;left:50%;transform:translateX(-50%);width:64%;color:var(--band-fg);opacity:.95}
+.arch-tag{position:absolute;top:33%;left:0;right:0;text-align:center;color:var(--band-fg);font-family:var(--serif);font-style:italic;font-size:clamp(1rem,1.6vw,1.25rem)}
+.stamp{position:absolute;right:6%;top:10%;width:92px;height:92px;border-radius:50%;background:var(--lima);color:#15292B;display:grid;place-items:center;text-align:center;font-size:.68rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;line-height:1.25;transform:rotate(12deg);box-shadow:var(--shadow)}
 .stamp b{display:block;font-family:var(--serif);font-weight:400;font-size:1.5rem;letter-spacing:0;text-transform:none}
 @media (max-width:900px){
   .hero .wrap{grid-template-columns:1fr}
@@ -521,6 +520,7 @@ footer{background:var(--band);color:var(--band-fg);padding-block:64px 40px}
       <div class="hero-art" aria-hidden="true">
         <div class="arch">
           <svg class="logo arch-logo" viewBox="0 0 3288 992"><use href="#gira"/></svg>
+          <p class="arch-tag">Gostoso por inteiro.</p>
         </div>
         <svg class="ring" viewBox="0 0 500 500">
           <defs><path id="circ" d="M250,250 m-232,0 a232,232 0 1,1 464,0 a232,232 0 1,1 -464,0"/></defs>
